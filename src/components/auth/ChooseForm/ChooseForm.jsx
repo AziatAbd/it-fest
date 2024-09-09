@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import "./ChooseForm.css";
 import { useNavigate } from "react-router-dom";
-import { Breadcrumbs, Link, Typography } from "@mui/material";
+import { Breadcrumbs, Link } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { useAuth } from "../../../context/AuthContextProvider";
 
@@ -9,8 +9,10 @@ const ChooseForm = () => {
   const [stRole, setStrole] = useState(false);
   const { setRole } = useAuth();
   const navigate = useNavigate();
+  console.log(stRole);
+  console.log(setStrole);
   return (
-    <>
+    <di>
       <Breadcrumbs
         separator={<NavigateNextIcon fontSize="small" />}
         aria-label="breadcrumb"
@@ -38,9 +40,18 @@ const ChooseForm = () => {
       </Breadcrumbs>
       <div>
         <div className="chooseRole_block">
-          <h2>Регистрация</h2>
+          <h2 className="chooseRolseReg">Регистрация</h2>
           <h3>Выберите свою роль участия:</h3>
           <div className="chooseRole_choice">
+            <div
+              className="choice1"
+              onClick={() => {
+                setRole("visitor");
+                navigate("/reg");
+              }}
+            >
+              <h3>Для посетителей</h3>
+            </div>
             <div
               className="choice3"
               onClick={() => {
@@ -59,15 +70,6 @@ const ChooseForm = () => {
             >
               <h3>Участник IT EXPO</h3>
             </div>
-            {/* <div
-              className="choice5"
-              onClick={() => {
-                setRole("Speaker");
-                navigate("/reg");
-              }}
-            >
-              <h3>Спикер</h3>
-            </div> */}
             <div
               className="choice1"
               onClick={() => {
@@ -76,6 +78,15 @@ const ChooseForm = () => {
               }}
             >
               <h3>Участник Фудкорт</h3>
+            </div>
+            <div
+              className="choice5"
+              onClick={() => {
+                setRole("partners");
+                navigate("/reg");
+              }}
+            >
+              <h3>Для партнеров</h3>
             </div>
             {/* <div
               className="choice2"
@@ -86,10 +97,19 @@ const ChooseForm = () => {
             >
               <h3>Участник мастер-классов</h3>
             </div> */}
+            {/* <div
+              className="choice5"
+              onClick={() => {
+                setRole("Speaker");
+                navigate("/reg");
+              }}
+            >
+              <h3>Спикер</h3>
+            </div> */}
           </div>
         </div>
       </div>
-    </>
+    </di>
   );
 };
 

@@ -1,8 +1,8 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
 import RegisterForm from "./components/auth/RegisterFrom/RegisterForm";
+import { Program } from "./components/Program/Program";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -20,6 +20,11 @@ const MainRoutes = () => {
       link: "/reg",
       element: <RegisterForm />,
       id: 3,
+    },
+    {
+      link: "/program",
+      element: <Program />,
+      id: 4,
     },
   ];
   return (

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export const authContext = React.createContext();
 export const useAuth = () => useContext(authContext);
 
-const API = "https://user131113.pythonanywhere.com";
+const API = "https://metalabs.kg:8089";
 
 const AuthContextProvider = ({ children }) => {
   const [role, setRole] = useState(null);

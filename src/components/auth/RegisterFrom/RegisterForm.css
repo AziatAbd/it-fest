@@ -1,3 +1,76 @@
+.hackathonResult {
+  width: 90%;
+  margin: 10px auto 20px;
+}
+
+.hackathonSend {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.deleteWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hackathonDelete {
+  font-size: 16px;
+  color: #fff;
+  background-color: #8007ca;
+  margin-top: 1rem;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.plusWrapper button {
+  font-size: 16px;
+  color: #fff;
+  background-color: #8007ca;
+  margin-top: 1rem;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.plusWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hackathonPerson {
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #fff;
+}
+.personTitle {
+  font-size: 25px;
+  text-align: center;
+}
+.regisTitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.hackathonLabel {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.hackathonInputWrapper {
+  margin-bottom: 10px;
+}
+
 .regBlockbg {
   background-image: url("/src/assets/regBg.png");
   background-repeat: no-repeat;
@@ -7,16 +80,31 @@
   color: white;
   padding: 3rem 0;
 }
+.plusBtn {
+  border: none;
+  color: #fff;
+  width: 300px;
+  font-size: 26px;
+  padding: 15px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: AnimationName 2s ease infinite;
+  background: linear-gradient(90deg, #25c6f9, #800bf5);
+}
 .regForm_block {
   color: white !important;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   align-items: center;
   margin-top: 2rem;
   padding: 4rem 0;
   border-radius: 30px;
   background-color: #e19df9;
+  padding: 20px;
 }
 .regForm_info {
   width: 100%;
@@ -67,6 +155,11 @@
   background-color: aliceblue;
 }
 .label2 {
+  grid-column: 1/2 !important;
+  grid-row: 6/8;
+}
+
+.foodTextarea {
   grid-column: 2/3;
   grid-row: 6/8;
 }
@@ -138,10 +231,18 @@
   align-items: center;
   font-weight: 600;
 }
+
+.regBtnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 .regCheck {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   margin-top: 2rem;
 }
 .regBbtn {
@@ -151,6 +252,7 @@
   border-radius: 20px;
   border: none;
   cursor: pointer;
+  margin: 0 auto;
 }
 .regBtnfalse {
   background-color: #d9d9d9;
@@ -196,8 +298,31 @@
 }
 .regFormSucces {
   position: fixed;
+  left: 50%;
+  transform: translate(-50%);
   top: 2rem;
 }
+.hackhathonRules {
+  margin-bottom: 20px;
+}
+
+.hackhathonRules p {
+  font-size: 22px;
+}
+
+.hacktathonDelete {
+  font-size: 16px;
+  color: #fff;
+  background-color: #8007ca;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
 @media screen and (max-width: 768px) {
   .regForm_block {
     padding: 2rem 0;
@@ -213,6 +338,10 @@
     grid-column: auto;
     grid-row: auto;
   }
+
+  .hackhathonRules p {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 425px) {
   .regBbtn {
@@ -220,5 +349,9 @@
   }
   .notFound_img {
     width: 15rem;
+  }
+
+  .hackhathonRules p {
+    font-size: 14px;
   }
 }

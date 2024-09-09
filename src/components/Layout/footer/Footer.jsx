@@ -12,12 +12,6 @@ const Footer = () => {
         <div className="footerInfo_Block">
           <div className="footerInfo">
             <img loading="lazy" src={logo} alt="" className="footerLogo" />
-            <div className="footerInfo_nav">
-              <p>О мероприятии</p>
-              <p>Участникам</p>
-              <p>Посетителям</p>
-              <p>Спонсорам и партнёрам</p>
-            </div>
             <div className="footerSocial_Block">
               <a href="https://wa.me/996555060955" target="_blank">
                 <img

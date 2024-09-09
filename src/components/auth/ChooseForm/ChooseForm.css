@@ -45,6 +45,10 @@
 .choice5:hover {
   box-shadow: 0px 5px 10px rgb(75, 75, 75);
 }
+
+.chooseRolseReg {
+  text-align: center;
+}
 /* .choice1 {
   grid-column: 1/4;
 }

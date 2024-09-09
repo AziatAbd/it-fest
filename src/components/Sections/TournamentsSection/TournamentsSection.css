@@ -83,15 +83,14 @@
 .imghovTitle {
   font-weight: 600;
   font-size: medium;
-  position: absolute;
   top: 5rem;
 }
 .imghovInfo {
   position: relative;
 }
 .imghovBtn {
-  position: absolute;
-  bottom: -6rem;
+  /* position: absolute; */
+  bottom: -4rem;
   width: 100%;
   background-color: #28209f;
   padding: 0.6rem 0;
@@ -105,31 +104,31 @@
   font-size: 1.4rem;
 }
 .imghovInfo > div {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .imghovBlock > p {
   margin: 0 1rem;
 }
 .imghovBlock1 {
-  background: #0e53a390;
+  background: hsla(212, 84%, 35%, 0.9);
 }
 .imghovBlock2 {
-  background: #ca4f1f90;
+  background: hsla(17, 73%, 46%, 0.9);
 }
 .imghovBlock3 {
-  background: #ec912690;
+  background: hsla(32, 84%, 54%, 0.9);
 }
 .imghovBlock4 {
-  background: #05689590;
+  background: hsla(199, 94%, 30%, 0.9);
 }
 .imghovBlock5 {
-  background: #027c6f90;
+  background: hsla(174, 97%, 25%, 0.9);
 }
 .imghovBlock6 {
-  background: #3aafa190;
+  background: hsla(173, 50%, 46%, 0.9);
 }
 .imghovBlock7 {
-  background: #293ea790;
+  background: hsla(230, 61%, 41%, 0.9);
 }
 .tourFor_img {
   transition: 0.4s;
@@ -307,6 +306,15 @@
     left: 0;
     z-index: 5;
   }
+
+  .imghovBtn {
+    width: 100%;
+    background-color: #28209f;
+    padding: 0.2rem 0;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 570px) {
   .tourForkimg01,
@@ -318,6 +326,13 @@
   .tourForkimg61 {
     margin: 0 auto;
     width: 100% !important;
+  }
+  .cardSubtitle {
+    margin-bottom: 30px;
+  }
+
+  .imghovBtn {
+    margin-bottom: 2rem;
   }
 }
 @media screen and (max-width: 425px) {

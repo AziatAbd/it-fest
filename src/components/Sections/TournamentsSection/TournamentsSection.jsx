@@ -1,4 +1,3 @@
-import React from "react";
 import chek from "../../../assets/chek.png";
 import tour0 from "../../../assets/tour/CyberSec.png";
 import tour1 from "../../../assets/tour/cs2.png";
@@ -49,9 +48,9 @@ const TournamentsSection = () => {
                   <div>
                     <div>
                       <p>Участники: </p>
-                      <p>640 человек.</p>
+                      <p className="csPerson">640 человек.</p>
                     </div>
-                    <p>Игровые дисциплины: </p>
+                    <p className="cardSubtitle">Игровые дисциплины: </p>
                     <p className="">
                       Counter-Strike 2
                       <br />
@@ -84,7 +83,6 @@ const TournamentsSection = () => {
                   <div>
                     <p>Направления: </p>
                     <p className="">
-                      {" "}
                       2D дизайн <br /> 3D дизайн <br />
                       3D моделирование <br />
                       моушн видео <br /> 3D визуализация <br /> веб-дизайн.
@@ -242,7 +240,6 @@ const TournamentsSection = () => {
             }}
           >
             <SwiperSlide>
-              {" "}
               <div className="tourFor_img tourForkimg1">
                 <img
                   loading="lazy"
@@ -252,7 +249,6 @@ const TournamentsSection = () => {
                 />
                 <div className="imghovBlock imghovBlock2 ">
                   <p className="imghovTitle">Киберспорт</p>
-
                   <div className="imghovInfo">
                     <div>
                       <div>
@@ -282,7 +278,6 @@ const TournamentsSection = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              {" "}
               <div className="tourFor_img tourForkimg2">
                 <img
                   loading="lazy"
@@ -317,7 +312,6 @@ const TournamentsSection = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              {" "}
               <div className="tourFor_img tourForkimg3">
                 <img
                   loading="lazy"
@@ -376,7 +370,6 @@ const TournamentsSection = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              {" "}
               <div className="tourFor_img tourForkimg5">
                 <img
                   loading="lazy"
@@ -406,7 +399,6 @@ const TournamentsSection = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              {" "}
               <div className="tourFor_img tourForkimg6">
                 <img
                   loading="lazy"
@@ -436,7 +428,6 @@ const TournamentsSection = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              {" "}
               <div className="tourFor_img tourForkimg0">
                 <img
                   loading="lazy"

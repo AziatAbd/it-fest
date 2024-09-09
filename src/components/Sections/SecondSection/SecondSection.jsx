@@ -45,7 +45,7 @@ const SecondSection = () => {
     );
   }, []);
   return (
-    <div className="container">
+    <div className="container" id="about">
       <p className="secondBlock_title">О мероприятии</p>
       <div className="secondBlock_video">
         <div>

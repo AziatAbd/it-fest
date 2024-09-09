@@ -1,347 +1,141 @@
-/* .bg6 {
-  background: linear-gradient(#28209f, #510ca000, #3a63d1),
-    url("/src/assets/bgexpo.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.expoBlock_main {
-  display: flex;
-  flex-direction: row;
-}
-.expoBlock_main > div {
-  width: 50%;
-  margin: 7rem auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.expoBlock_info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 35rem;
-  width: 86%;
-  margin-top: 6rem;
-  font-size: 1.2rem;
-  padding: 2rem 0;
-  position: relative;
-}
-.expoBlock_info > ul {
-  width: 80%;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-}
-.expoBlock_info > h3 {
-  font-size: 2rem;
-}
-.expoBlock_info > h4 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  text-decoration: line-through;
-}
-.expoBlock_info > h5 {
-  font-size: 1.3rem;
-}
-.infoBlock1 {
-  border: 4px solid #d6d6d6;
-  background: linear-gradient(
-    180deg,
-    rgba(188, 193, 194, 0.7) 0%,
-    rgba(113, 112, 108, 0.7) 100%
-  );
-
-  backdrop-filter: blur(5px);
-}
-.infoBlock2 {
-  border: 4px solid #ffe599;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 207, 64, 0.8) 0%,
-    rgba(166, 124, 0, 0.8) 100%
-  );
-
-  backdrop-filter: blur(5px);
-}
-.expoCassa {
-  position: absolute;
-  right: auto;
-  left: -5rem;
-  top: -6rem;
-}
-.expoSale_img {
-  position: absolute;
-  left: auto;
-  right: -4rem;
-  top: -1rem;
-  width: 10rem;
-}
-.expoBtn {
-  width: 35rem;
-  height: 5rem;
-  margin-bottom: 5rem;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 2rem;
-  background-color: #8007ca;
-  color: white;
-  transition: 0.4s;
-}
-.expoBtn:hover {
-  background-color: #aa37f1;
-  color: white;
-}
-.expoBtn_block {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.expo_title {
-  font-size: 4rem;
-  text-align: center;
-}
-@media screen and (max-width: 1370px) {
-  .expoBlock_img {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .expoBlock_info > ul {
-    width: 80%;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-  }
-  .expoBlock_info > h3 {
-    font-size: 2rem;
-  }
-  .expoBlock_info > h5 {
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .expoBlock_img {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .expoCassa {
-    width: 40%;
-    left: -3rem;
-    top: -5rem;
-  }
-  .expoBlock_info > ul {
-    width: 80%;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-  }
-  .expoBlock_info > h3 {
-    font-size: 2rem;
-  }
-  .expoBlock_info > h5 {
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .expoBlock_main {
-    flex-direction: column;
-  }
-  .expoSale_img {
-    right: -4rem;
-    bottom: -7.3rem;
-    width: 10rem;
-  }
-  .expoBlock_info {
-    margin-bottom: 0;
-    height: auto;
-  }
-  .expoBlock_main > div {
-    padding: 0;
-    margin: 0 auto;
-    margin-top: 10rem;
-
-    width: 100%;
-  }
-  .expoBtn {
-    margin: 5rem 0;
-  }
-  .expoBlock_img {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .expoCassa {
-    width: 30%;
-    left: -3rem;
-    top: -5rem;
-  }
-  .expoBlock_info > ul {
-    width: 80%;
-    font-size: 1.4rem;
-    line-height: 2rem;
-  }
-  .expoBlock_info > h3 {
-    font-size: 3rem;
-  }
-}
-@media screen and (max-width: 570px) {
-  .expoSale_img {
-    right: -2rem;
-    width: 6rem;
-  }
-  .expoCassa {
-    left: -3rem;
-    width: 50%;
-    top: -5rem;
-  }
-  .expoBlock_info > ul {
-    width: 80%;
-    font-size: 1.2rem;
-    line-height: 1.7rem;
-  }
-  .expoBtn {
-    width: 20rem;
-    height: 4rem;
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 425px) {
-  .expoSale_img {
-    right: -2rem;
-    width: 6rem;
-  }
-  .expoCassa {
-    left: -2rem;
-    top: -5rem;
-  }
-  .expoBlock_info > ul {
-    width: 80%;
-    font-size: 1rem;
-    line-height: 1.4rem;
-  }
-  .expoBlock_info > h3 {
-    font-size: 2.1rem;
-  }
-} */
 .expoMain_block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: relative;
   border: 3px #fff solid;
-  border-radius: 70px;
+  border-radius: 40px;
   width: 80%;
-  margin: 4rem auto;
-
-  padding: 3rem 0;
+  margin: 40px auto 80px;
+  padding: 40px;
   font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .expo_Main_text {
   position: absolute;
-  top: -1rem;
+  top: -36px;
   background-color: #14063d;
-  padding: 0 1rem;
+  padding: 20px;
   margin-bottom: 2rem;
 }
 .expoVariants {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
-  width: 90%;
+  gap: 40px;
+  width: 100%;
+  display: flex;
   margin: 0 auto;
 }
 .expoVariants_block {
+  gap: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
   border-radius: 30px;
-  padding: 1rem 2.5rem;
+  padding: 20px 10px;
+  width: 100%;
+  max-width: 100%;
 }
 
-.expo1 {
+.expoStandart {
+  /* background-color: #d28c47; */
+  background: linear-gradient(140deg, #e2a364, #f7ad59, #f6a656);
+}
+.expoSilver {
   background: linear-gradient(140deg, #a1a4a4, #e3e3e4, #868686);
 }
-.expo2 {
+
+.expoGold {
   background: linear-gradient(140deg, #ffbf00, #fadc82, #c0930d);
+}
+
+.expoImgWrapper {
+  width: 200px;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  margin-bottom: 5px;
 }
 
 .expoiMG {
   width: 100%;
-  border-radius: 10px;
-  padding: 2rem 1rem;
-}
-.expoImg1 {
-  border: #ffffff 3px solid;
-}
-.expoImg2 {
-  border: #ffffff 3px solid;
+  height: 100%;
+  object-fit: contain;
 }
 
 .expoVar_text {
   font-family: "Inter", sans-serif;
   font-style: italic;
-  margin: 1rem 0;
   font-size: 2rem;
   font-weight: 900;
 }
+.sxpoVar_subtitle {
+  font-size: 1.5rem;
+  text-align: center;
+}
 .expoPrice {
-  margin: 1rem 0;
   font-family: "Russo one", sans-serif;
   font-size: 2rem;
+  text-align: center;
   color: #ffffff;
 }
 .expoPriceLined {
-  margin-bottom: 1rem;
-  font-family: "Russo one", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
   color: #ffffff;
-  text-decoration: line-through;
+  margin-bottom: 10px;
 }
 .expoBtn {
   font-weight: 600;
-  width: 100%;
-  margin-bottom: 1rem;
+  width: 95%;
+  margin: 0 auto;
   height: 2.5rem;
-  border-radius: 90px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   text-decoration: none;
   color: white;
+  background: linear-gradient(90deg, #2663ff, #d1a4ff);
 }
-.alert{
+.alert {
   position: fixed;
   z-index: 120;
   top: 1rem;
 }
-.expoBtn1 {
-  background: linear-gradient(90deg, #d1a4ff, #2663ff);
+
+@media screen and (max-width: 1200px) {
+  .expoVariants {
+    flex-direction: column;
+    align-items: center;
+  }
+  .expoVariants_block {
+    max-width: 450px;
+  }
 }
-.expoBtn2 {
-  background: linear-gradient(90deg, #ff9162, #d66230);
-}
-@media screen and (max-width:835px) {
-  .expoPrice{
+
+@media screen and (max-width: 835px) {
+  .expoPrice {
     font-size: 1.5rem;
   }
 }
-@media screen and (max-width:768px) {
-  .expoVariants{
+@media screen and (max-width: 768px) {
+  .expoVariants {
     display: flex;
     flex-direction: column;
   }
 }
-@media screen and (max-width:543px) {
-  .expoMain_block{
+@media screen and (max-width: 543px) {
+  .expoMain_block {
     padding: 2rem;
   }
 }
-@media screen and (max-width:375px) {
-
-
-  .expoMain_block{
-    padding: 2rem 1rem ;
+@media screen and (max-width: 375px) {
+  .expoMain_block {
+    padding: 2rem 1rem;
     border-radius: 50px;
   }
 }

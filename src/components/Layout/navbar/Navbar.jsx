@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import logo from "../../../assets/logo.svg";
-import arrow from "../../../assets/arrow.svg";
 
 import Button from "@mui/material/Button";
 // import Menu from "@mui/material/Menu";
@@ -10,14 +9,10 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItem from "@mui/material/ListItem";
 import menuicon from "../../../assets/menu.svg";
 
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
-import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
   const [arrowSt, setArrowSt] = useState(false);
@@ -39,18 +34,22 @@ const Navbar = () => {
     <div className="bg2">
       <div className="container">
         <div className="navBlock_main">
-          <img
-            src={logo}
-            alt="error"
-            className="navBlock_logo"
-            onClick={() => navigate("/")}
-          />
+          <div className="headerLogo">
+            <img
+              src={logo}
+              alt="error"
+              className="navBlock_logo"
+              onClick={() => navigate("/")}
+            />
+          </div>
           <div className="navBlock_mini">
             <div
               className="navBlock_mini2"
               onClick={() => setArrowSt(!arrowSt)}
             >
-              <p className="navBlock_nav">О мероприятии</p>
+              <a href="/#about" className="navBlock_nav">
+                О мероприятии
+              </a>
               {/* <img
                 src={arrow}
                 alt="error"
@@ -78,7 +77,9 @@ const Navbar = () => {
               className="navBlock_mini2"
               onClick={() => setArrowSt1(!arrowSt1)}
             >
-              <p className="navBlock_nav">Участникам</p>
+              <a href="/#participants" className="navBlock_nav">
+                Участникам
+              </a>
               {/* <img
                 src={arrow}
                 alt="error"
@@ -103,7 +104,9 @@ const Navbar = () => {
               className="navBlock_mini2"
               onClick={() => setArrowSt2(!arrowSt2)}
             >
-              <p className="navBlock_nav">Посетителям</p>
+              <a className="navBlock_nav" onClick={() => navigate("/program")}>
+                Программа
+              </a>
               {/* <img
                 src={arrow}
                 alt="error"
@@ -126,7 +129,9 @@ const Navbar = () => {
               className="navBlock_mini2"
               onClick={() => setArrowSt3(!arrowSt3)}
             >
-              <p className="navBlock_nav">Спонсорам и партнёрам</p>
+              <a href="/#sponsors" className="navBlock_nav">
+                Спонсорам и партнёрам
+              </a>
               {/* <img
                 src={arrow}
                 alt="error"
@@ -143,9 +148,6 @@ const Navbar = () => {
               <div></div>
             )} */}
           </div>
-          <p className="navBlock_btn" onClick={() => navigate("/choice")}>
-            Регистрация
-          </p>
           <div className="navDrawer">
             <Button onClick={toggleDrawer(true)}>
               <img
@@ -166,7 +168,10 @@ const Navbar = () => {
                     className="navDrop_block"
                     onClick={() => setDrop1(!arrowDrop1)}
                   >
-                    <div className="navDropdown">О мероприятии</div>
+                    {/* <div className="navDropdown">О мероприятии</div> */}
+                    <a href="/#about" className="navDropdown">
+                      О мероприятии
+                    </a>
                     {/* <img
                       src={arrow}
                       alt="error"
@@ -226,7 +231,10 @@ const Navbar = () => {
                     className="navDrop_block"
                     onClick={() => setDrop2(!arrowDrop2)}
                   >
-                    <div className="navDropdown">Участникам</div>
+                    {/* <div className="navDropdown">Участникам</div> */}
+                    <a href="/#participants" className="navDropdown">
+                      Участникам
+                    </a>
                     {/* <img
                       src={arrow}
                       alt="error"
@@ -279,7 +287,14 @@ const Navbar = () => {
                     className="navDrop_block"
                     onClick={() => setDrop3(!arrowDrop3)}
                   >
-                    <div className="navDropdown">Посетителям</div>
+                    {/* <div className="navDropdown">Посетителям</div> */}
+                    <a
+                      href="/#visitors"
+                      className="navDropdown"
+                      onClick={() => navigate("/program")}
+                    >
+                      Программа
+                    </a>
                     {/* <img
                       src={arrow}
                       alt="error"
@@ -322,7 +337,10 @@ const Navbar = () => {
                     className="navDrop_block"
                     onClick={() => setDrop4(!arrowDrop4)}
                   >
-                    <div className="navDropdown">Спонсорам и партнёрам</div>
+                    {/* <div className="navDropdown">Спонсорам и партнёрам</div> */}
+                    <a href="/#sponsors" className="navDropdown">
+                      Спонсорам и партнёрам
+                    </a>
                     {/* <img
                       src={arrow}
                       alt="error"
@@ -354,18 +372,7 @@ const Navbar = () => {
                 sx={{ width: 250 }}
                 role="presentation"
                 onClick={toggleDrawer(true)}
-              >
-                <List>
-                  <ListItemButton>
-                    <div
-                      className="navDrop_reg"
-                      onClick={() => navigate("/choice")}
-                    >
-                      Регистрация
-                    </div>
-                  </ListItemButton>
-                </List>
-              </Box>
+              ></Box>
             </Drawer>
           </div>
         </div>

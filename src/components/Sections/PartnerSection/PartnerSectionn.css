@@ -71,8 +71,13 @@
 .partnerBlock_imgs > img {
   margin: 0 auto;
 }
-.bigSpon{
+.bigSpon {
   width: 15rem;
+}
+
+.metaLogo {
+  width: 290px;
+  height: 100px;
 }
 @media screen and (max-width: 1024px) {
   .partnerBlock_imgs > img {

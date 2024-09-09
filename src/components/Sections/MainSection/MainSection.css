@@ -1,9 +1,7 @@
 .firstBlock_main {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  /* margin-top: 5rem; */
   height: calc(100vh - 6rem);
 }
 .bg1 {
@@ -65,17 +63,15 @@
   margin: 0 auto;
   flex-wrap: wrap;
 }
-.secondBlock_sponsors > img {
-  width: 5rem;
-}
-.logobig {
-  width: 6rem !important;
-}
 .logopat2 {
   width: 17rem !important;
 }
 .logopat {
   width: 10rem !important;
+}
+.logobig {
+  width: 200px;
+  height: 50px;
 }
 .logobigb {
   width: 90%;
@@ -99,10 +95,76 @@
 }
 
 .mainBgColor {
-  position: absolute;
+  /* position: absolute; */
   top: 20;
   width: 90%;
   z-index: 1;
+  width: 400px;
+  height: 400px;
+}
+
+.heroPlanet {
+  width: 400px;
+  height: 400px;
+  background: url("../../../assets/elements/planet.svg") center/contain
+    no-repeat;
+}
+
+.heroWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
+}
+.heroReg {
+  border: none;
+  color: #fff;
+  width: 300px;
+  font-size: 26px;
+  padding: 15px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: AnimationName 2s ease infinite;
+  background: linear-gradient(90deg, #25c6f9, #800bf5);
+}
+
+.heroReg:hover {
+  opacity: 0.9;
+}
+.organizersMetaLogo {
+  width: 240px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%;
+  height: 100%; */
+  object-fit: cover;
+  background: url("../../../assets/partnerslogo/metaLogo.svg") center/cover
+    no-repeat;
+}
+
+.logoCom {
+  font-size: 40px;
+  letter-spacing: 2px;
+  font-family: serif;
 }
 
 @media screen and (max-width: 1345px) {
@@ -172,9 +234,12 @@
   #firstDate {
     font-size: 1em;
   }
+  .heroWrapper {
+    height: fit-content;
+  }
   .firstBlock_main {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
   }
   .bg1 {
     background-size: cover;

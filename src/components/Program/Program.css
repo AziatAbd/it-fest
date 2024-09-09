@@ -1,0 +1,116 @@
+.donwloadBtn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 22px;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  backdrop-filter: blur(1px);
+}
+
+.donwloadBtn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #14063d;
+  opacity: 0.8;
+  z-index: -2;
+}
+
+.program {
+  background: url("/src/assets/regBg.png") center/cover no-repeat;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.programBack {
+  padding: 10px 20px;
+  border-radius: 4px;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  backdrop-filter: blur(1px);
+}
+
+.programBack::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #14063d;
+  opacity: 0.8;
+  z-index: -2;
+}
+
+.programInnerTitle {
+  display: block;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.programHeading {
+  padding: 40px 0;
+  gap: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.programHeading span {
+  font-size: 25px;
+  line-height: 1.3em;
+  cursor: pointer;
+}
+
+.programListWrapper {
+  position: relative;
+  padding: 40px;
+  border-radius: 20px;
+  display: flex;
+  gap: 50px;
+  overflow: hidden;
+  backdrop-filter: blur(45px);
+}
+
+.programListWrapper::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #14063d;
+  opacity: 0.8;
+  z-index: -2;
+}
+
+.programList {
+  width: 50%;
+}
+
+.programList h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.programList p {
+  font-size: 20px;
+  font-weight: 400;
+  padding: 20px 0;
+  line-height: 1.3em;
+  border-bottom: 2px solid #fff;
+}
+
+.programList p span {
+  font-size: 25px;
+  font-weight: 600;
+}

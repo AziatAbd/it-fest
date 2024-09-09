@@ -1,8 +1,18 @@
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.headerLogo {
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .navBlock_main {
+  gap: 50px;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   color: #fff;
   margin-top: 1rem;
   font-family: "Montserrat", sans-serif;
@@ -16,11 +26,17 @@
 }
 
 .navBlock_nav {
+  position: relative;
   cursor: pointer;
   margin-right: 1rem;
+  font-size: 22px;
 }
 
-.navArrow {
+.navBlock_nav:hover {
+  color: #800bf5;
+}
+
+.navBlock_nav .navArrow {
   width: 1rem;
   transition: 0.5s;
 }
@@ -69,14 +85,7 @@
   padding-left: 3rem;
   padding-top: 1rem;
 }
-.navDrop_reg {
-  margin: 1rem auto;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-}
+
 .MuiDrawer-paper {
   padding-top: 1rem;
   font-family: "Montserrat", sans-serif;
@@ -116,6 +125,15 @@
   cursor: pointer;
   animation: AnimationName 2s ease infinite;
   background: linear-gradient(90deg, #25c6f9, #800bf5);
+}
+
+@media screen and (max-width: 1300px) {
+  .navBlock_main {
+    gap: 20px;
+  }
+  .navBlock_nav {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 1024px) {

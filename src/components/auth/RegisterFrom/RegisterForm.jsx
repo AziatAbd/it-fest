@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
+import { useState } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import "./RegisterForm.css";
-import { Breadcrumbs, InputLabel, Link } from "@mui/material";
+import { Breadcrumbs, Link } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContextProvider";
@@ -32,16 +32,26 @@ const RegisterForm = () => {
   const [Country, setCountry] = useState("");
   const [City, setCity] = useState("");
   const [DateOfBirth, setDateOfBirth] = useState("");
+  const [Age, setAge] = useState("");
   const [PhoneNumber, setPhoneNumber] = useState("");
   const [speech_theme, setSpeech_theme] = useState("");
+  const [VisitorTheme, setVisitorTheme] = useState("");
   const [message, setMessage] = useState("");
   const [legAdr, setlegAdr] = useState("");
   const [inn, setInn] = useState(0);
   const [jbtitle, setjbtitle] = useState("");
   const [siteurl, setsiteurl] = useState("");
   const [activity, setactivity] = useState("");
-
+  const [result, setResult] = useState("");
+  const [partnersCompanyName, setPartnersCompanyName] = useState("");
+  const [isHackatonChoosen, setHackatonChoosen] = useState(false);
   const [compProd, setcompprod] = useState("");
+  const [hackathonTeamName, setHackathonTeamName] = useState("");
+  const [teammates, setTeammates] = useState([
+    { name: "", email: "", dateOfBirth: "", phone: "", position: "" },
+    { name: "", email: "", dateOfBirth: "", phone: "", position: "" },
+    { name: "", email: "", dateOfBirth: "", phone: "", position: "" },
+  ]);
 
   function sendData(fork) {
     if (fork == "register_user/speaker/") {
@@ -251,16 +261,16 @@ const RegisterForm = () => {
         register(formdata, fork);
       }
     }
-    if (fork == "register_company/food_zone/") {
+    if (fork == "/foodcourt-participant") {
       if (
         !Name ||
-        !Surname ||
-        !legAdr ||
-        !inn ||
-        !FatherName ||
+        // !Surname ||
+        // !legAdr ||
+        // !inn ||
+        // !FatherName ||
         !jbtitle ||
         !activity ||
-        !siteurl ||
+        // !siteurl ||
         !Email ||
         !Country ||
         !compProd
@@ -272,13 +282,13 @@ const RegisterForm = () => {
       }
       const formdata = {
         Brand_name: Name,
-        Legal_name: Surname,
-        Legal_address: legAdr,
-        INN: inn,
-        Supervisor_Name: FatherName,
+        // Legal_name: Surname,
+        // Legal_address: legAdr,
+        // INN: inn,
+        // Supervisor_Name: FatherName,
         Job_Title: jbtitle,
         Company_Activity: activity,
-        Web_Site: siteurl,
+        // Web_Site: siteurl,
         Email: Email,
         Country: Country,
         Phone_number: PhoneNumber,
@@ -292,23 +302,23 @@ const RegisterForm = () => {
         }
       }
     }
-    if (fork == "register_company/it_expo/") {
+    if (fork == "/expo-participant") {
       if (
         !Name ||
-        !Surname ||
-        !legAdr ||
-        !inn ||
-        !FatherName ||
+        // !Surname ||
+        // !legAdr ||
+        // !inn ||
+        // !FatherName ||
         !jbtitle ||
         !activity ||
-        !siteurl ||
+        // !siteurl ||
         !Email ||
         !Country ||
         !PhoneNumber ||
         !compProd ||
         !theme2
       ) {
-        console.log(Country, PhoneNumber, compProd, reg_logo, reg_check);
+        // console.log(Country, PhoneNumber, compProd, reg_logo, reg_check);
         alert("Заполните все поля!");
         return;
       } else {
@@ -331,14 +341,143 @@ const RegisterForm = () => {
       };
       emailVal();
       if (message.length < 1) {
-        console.log(reg_logo);
+        // console.log(reg_logo);
         register(formdata, fork);
         if (checked && inpBtnSt) {
           navigate("/");
         }
       }
     }
+    if (fork == "/visitor") {
+      if (!Name || !City || !Age || !PhoneNumber || !setVisitorTheme) {
+        alert("Заполните все поля!1");
+        return;
+      } else {
+        setInpBtnSt(true);
+      }
+
+      const formdata = {
+        Name: Name,
+        City: City,
+        Age: Age,
+        PhoneNumber: PhoneNumber,
+        Theme: VisitorTheme,
+      };
+      register(formdata, fork);
+    }
+    if (fork == "/tournament-participant") {
+      const formdata = {
+        Name: Name,
+        Surname: Surname,
+        FatherName: FatherName,
+        Email: Email,
+        Country: Country,
+        City: City,
+        PhoneNumber: PhoneNumber,
+        DateOfBirth: DateOfBirth,
+        course: result,
+      };
+      console.log(formdata);
+      if (
+        !Name ||
+        !Surname ||
+        !FatherName ||
+        !Email ||
+        !Country ||
+        !City ||
+        !DateOfBirth ||
+        !PhoneNumber ||
+        !theme
+      ) {
+        // console.log(Country, PhoneNumber, compProd, reg_logo, reg_check);
+        alert("Заполните все поля!");
+        return;
+      } else {
+        setInpBtnSt(!inpBtnSt);
+      }
+      emailVal();
+      if (message.length < 1) {
+        // console.log(reg_logo);
+        register(formdata, fork);
+        if (checked && inpBtnSt) {
+          navigate("/");
+        }
+      }
+    }
+    if (fork == "/partners") {
+      if (
+        !partnersCompanyName ||
+        !Name ||
+        !jbtitle ||
+        !PhoneNumber ||
+        !theme2
+      ) {
+        alert("Заполните все поля!1");
+        return;
+      } else {
+        setInpBtnSt(true);
+      }
+
+      const formdata = {
+        PartnersCompanyName: partnersCompanyName,
+        Name: Name,
+        PhoneNumber: PhoneNumber,
+        jbtitle: jbtitle,
+        theme2: theme2,
+      };
+      console.log(formdata);
+      register(formdata, fork);
+    }
+    if (fork == "/hackathonTeam") {
+      if (!hackathonTeamName || !Country || !City || !theme || !teammates) {
+        alert("Заполните все поля!1");
+        return;
+      } else {
+        setInpBtnSt(true);
+      }
+
+      const formdata = {
+        hackathonTeamName: hackathonTeamName,
+        Country: Country,
+        City: City,
+        Theme: theme,
+        hackathonTeammates: teammates,
+      };
+      console.log(formdata);
+      register(formdata, fork);
+    }
   }
+
+  const handleThemeChange = (event) => {
+    const value = event.target.value;
+    if (value === "hackathon") {
+      setHackatonChoosen(true);
+    } else {
+      setHackatonChoosen(false);
+    }
+    setTheme(value);
+    updateResult(value, work, format);
+  };
+
+  const handleWorkChange = (event) => {
+    const value = event.target.value;
+    setWork(value);
+    updateResult(theme, value, format);
+  };
+
+  const handleFormatChange = (event) => {
+    const value = event.target.value;
+    setFormat(value);
+    updateResult(theme, work, value);
+  };
+
+  const updateResult = (theme, work, format) => {
+    let newResult = theme;
+    if (work) newResult += ` ${work}`;
+    if (format) newResult += ` ${format}`;
+    setResult(newResult);
+  };
+
   function formatphone(value) {
     if (!value) return value;
     const phonenum = value.replace(/[^\d]/g, "");
@@ -381,6 +520,550 @@ const RegisterForm = () => {
   const emailHandler = (e) => {
     setEmail(e.target.value);
   };
+
+  const addTeammate = () => {
+    if (teammates.length < 5) {
+      setTeammates((prevTeammates) => [
+        ...prevTeammates,
+        { name: "", email: "", dateOfBirth: "", phone: "", position: "" },
+      ]);
+    } else {
+      alert("Вы можете добавить не более 5 участников.");
+    }
+  };
+
+  const removeTeammate = (index) => {
+    setTeammates((prevTeammates) =>
+      prevTeammates.filter((_, idx) => idx !== index)
+    );
+  };
+
+  const setTournamentByHackatonChoosen = (isHackatonChoosen) => {
+    if (isHackatonChoosen) {
+      return (
+        <>
+          <div className="formBlock hackhathonRules">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
+              quas dolorum qui? Laboriosam temporibus suscipit aliquid tenetur
+              ipsa molestias voluptatem ipsam eos voluptas labore nisi minima,
+              numquam consequuntur autem cupiditate ab, totam libero impedit!
+              Nobis iure ab maiores. Deleniti repellendus modi distinctio
+              facilis, recusandae non, obcaecati, odit cupiditate harum
+              blanditiis similique? Nobis voluptatum doloribus earum sit,
+              necessitatibus quibusdam. Eos dolore dolorum distinctio modi ipsum
+              quibusdam ipsam explicabo beatae nihil, voluptas natus tempore
+              labore nisi facere accusantium eveniet officiis dignissimos
+              aspernatur sint! Quod libero assumenda placeat tempore harum. Nemo
+              dolor ipsam vitae labore cupiditate facilis recusandae blanditiis.
+              Aspernatur laudantium quas inventore.
+            </p>
+          </div>
+          <div className="formBlock">
+            <div className="hackathonInputWrapper">
+              <label className="hackathonLabel" htmlFor="">
+                Название команды
+              </label>
+              <input
+                className="formInput"
+                type="text"
+                onChange={(e) => setHackathonTeamName(e.target.value)}
+              />
+            </div>
+            <div className="hackathonInputWrapper">
+              <label className="hackathonLabel" htmlFor="">
+                Страна
+              </label>
+              <input
+                className="formInput"
+                type="text"
+                onChange={(e) => setCountry(e.target.value)}
+              />
+            </div>
+            <div className="hackathonInputWrapper">
+              <label className="hackathonLabel" htmlFor="">
+                Город
+              </label>
+              <input
+                className="formInput"
+                type="text"
+                onChange={(e) => setCity(e.target.value)}
+              />
+            </div>
+          </div>
+          <>
+            <div className="formBlock">
+              <div>
+                <p className="hackathonLabel">Тематический раздел</p>
+                <FormControl fullWidth>
+                  <Select
+                    labelId="theme-select-label"
+                    id="theme-select"
+                    onChange={handleThemeChange}
+                    value={theme}
+                    className="formInputSelect hackathonInputWrapper"
+                  >
+                    <MenuItem value={"cybersport"}>Киберспорт</MenuItem>
+                    <MenuItem value={"design"}>Дизайн и 3D</MenuItem>
+                    <MenuItem value={"hackathon"}>Хакатон</MenuItem>
+                    <MenuItem value={"mobilography"}>Мобилография</MenuItem>
+                    <MenuItem value={"robotix"}>Робототехника</MenuItem>
+                    <MenuItem value={"dronerace"}>Дрон демонстрация</MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
+            </div>
+            {theme === "hackathon" && (
+              <div className="formBlock">
+                <div>
+                  <p className="Выберите свое направление">
+                    Выберите свое направление
+                  </p>
+                  <FormControl fullWidth>
+                    <Select
+                      labelId="work-select-label"
+                      id="work-select"
+                      onChange={handleWorkChange}
+                      value={work}
+                      className="formInputSelect"
+                    >
+                      <MenuItem value={"Backend"}>Backend</MenuItem>
+                      <MenuItem value={"Frontend"}>Frontend</MenuItem>
+                      <MenuItem value={"Fullstack"}>Fullstack</MenuItem>
+                      <MenuItem value={"Android-IOS"}>Android-IOS</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+              </div>
+            )}
+            <div className="hackathonResult">
+              <p>Результат: {result}</p>
+            </div>
+          </>
+          {teammates.map((mate, idx) => (
+            <>
+              <div className="formBlock">
+                <div className="hackathonPerson">
+                  <h3 className="personTitle">{idx + 1} человек</h3>
+                  <div className="hackathonInputWrapper">
+                    <label className="hackathonLabel" htmlFor="#">
+                      ФИО
+                    </label>
+                    <input
+                      className="formInput"
+                      type="text"
+                      id={`name_${idx}`}
+                      onInput={(e) => {
+                        const [field, index] = e.target.id.split("_");
+                        setTeammates((prev) => {
+                          prev.map((el, idx) => {
+                            if (idx == index) {
+                              el[field] = e.target.value;
+                              return el;
+                            }
+                            return el;
+                          });
+                          return prev;
+                        });
+                      }}
+                    />
+                  </div>
+                  <div className="hackathonInputWrapper">
+                    <label className="hackathonLabel" htmlFor="#">
+                      Email
+                    </label>
+                    <input
+                      className="formInput"
+                      type="text"
+                      id={`email_${idx}`}
+                      onChange={(e) => emailHandler(e)}
+                      onInput={(e) => {
+                        const [field, index] = e.target.id.split("_");
+                        setTeammates((prev) => {
+                          prev.map((el, idx) => {
+                            if (idx == index) {
+                              el[field] = e.target.value;
+                              return el;
+                            }
+                            return el;
+                          });
+                          return prev;
+                        });
+                      }}
+                    />
+                  </div>
+                  <div className="hackathonInputWrapper">
+                    <label className="hackathonLabel" htmlFor="#">
+                      Дата рождения
+                    </label>
+                    <input
+                      max={"2024-01-01"}
+                      min={"1800-01-01"}
+                      className="formInput"
+                      type="date"
+                      onChange={(e) => setDateOfBirth(e.target.value)}
+                      id={`dateOfBirth_${idx}`}
+                      onInput={(e) => {
+                        const [field, index] = e.target.id.split("_");
+                        setTeammates((prev) => {
+                          prev.map((el, idx) => {
+                            if (idx == index) {
+                              el[field] = e.target.value;
+                              return el;
+                            }
+                            return el;
+                          });
+                          return prev;
+                        });
+                      }}
+                    />
+                  </div>
+                  <div className="hackathonInputWrapper">
+                    <label className="hackathonLabel" htmlFor="#">
+                      Телефон
+                    </label>
+                    <input
+                      type="tel"
+                      name="telphone"
+                      placeholder="996 999777666"
+                      className="formInput"
+                      onChange={(e) => phoneHandle(e)}
+                      id={`phone_${idx}`}
+                      value={mate.phone || ""}
+                      onInput={(e) => {
+                        const [field, index] = e.target.id.split("_");
+                        setTeammates((prev) => {
+                          prev.map((el, idx) => {
+                            if (idx == index) {
+                              el[field] = e.target.value;
+                              return el;
+                            }
+                            return el;
+                          });
+                          return prev;
+                        });
+                      }}
+                    />
+                  </div>
+                  <div className="hackathonInputWrapper">
+                    <label className="hackathonLabel" htmlFor="#">
+                      Позиция в команде
+                    </label>
+                    <input
+                      className="formInput"
+                      type="text"
+                      id={`position_${idx}`}
+                      onInput={(e) => {
+                        const [field, index] = e.target.id.split("_");
+                        setTeammates((prev) => {
+                          prev.map((el, idx) => {
+                            if (idx == index) {
+                              el[field] = e.target.value;
+                              return el;
+                            }
+                            return el;
+                          });
+                          return prev;
+                        });
+                      }}
+                    />
+                  </div>
+                  {teammates.length > 3 && idx >= 3 && (
+                    <div className="deleteWrapper">
+                      <button
+                        className="hacktathonDelete"
+                        onClick={() => removeTeammate(idx)}
+                      >
+                        Удалить
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </>
+          ))}
+
+          <div className="plusWrapper">
+            <button onClick={addTeammate}>еще</button>
+          </div>
+          <div className="hackathonSend">
+            <div className="regCheck">
+              <Checkbox
+                onChange={(event) => setChecked(event.target.checked)}
+              />
+              <p>Я прочел все условия и согласен с ними</p>
+            </div>
+            <div className="regBtnWrapper">
+              {/* <button
+                className={`regBbtn regBtn${checked}`}
+                disabled={!checked}
+                // need to add link way
+                onClick={() => sendData("#")}
+              >
+                Зарегистрироваться
+              </button> */}
+              <button
+                className={`regBbtn regBtn${checked}`}
+                disabled={!checked}
+                onClick={() => {
+                  const formdata = {
+                    hackathonTeamName: hackathonTeamName,
+                    Country: Country,
+                    City: City,
+                    Theme: theme,
+                    hackathonTeammates: teammates,
+                  };
+                  console.log("Отправляемые данные:", formdata); // вывод данных в консоль
+                }}
+              >
+                Зарегистрироваться
+              </button>
+            </div>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div className="regForm_info">
+            <div className="formBlock">
+              <p className="formInp_label">Имя</p>
+              <input
+                className="formInput"
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="formBlock">
+              <p className="formInp_label">Фамилия</p>
+              <input
+                className="formInput"
+                type="text"
+                onChange={(e) => setSurname(e.target.value)}
+              />
+            </div>
+            <div className="formBlock">
+              <p className="formInp_label">Отчество</p>
+              <input
+                className="formInput"
+                type="text"
+                onChange={(e) => setFatherName(e.target.value)}
+              />
+            </div>
+            <div className="formBlock">
+              <p className="formInp_label">Email</p>
+              <p className="message" style={{ color: "red" }}>
+                {message}
+              </p>
+              <input
+                className="formInput"
+                type="text"
+                onChange={(e) => emailHandler(e)}
+              />
+            </div>
+            <div className="formBlock">
+              <p className="formInp_label">Страна</p>
+              <input
+                className="formInput"
+                type="text"
+                onChange={(e) => setCountry(e.target.value)}
+              />
+            </div>
+            <div className="formBlock">
+              <p className="formInp_label">Город</p>
+              <input
+                className="formInput"
+                type="text"
+                onChange={(e) => setCity(e.target.value)}
+              />
+            </div>
+            <div className="formBlock">
+              <p className="formInp_label">Дата рождения</p>
+              <input
+                max={"2024-01-01"}
+                min={"1800-01-01"}
+                className="formInput"
+                type="date"
+                onChange={(e) => setDateOfBirth(e.target.value)}
+              />
+            </div>
+            <div className="formBlock">
+              <p className="formInp_label">Телефон</p>
+              <form action="" method="post" id="cusCreate">
+                <input
+                  type="tel"
+                  name="telphone"
+                  placeholder="996 999777666"
+                  title="Пример:996 999777666"
+                  className="formInput"
+                  onChange={(e) => phoneHandle(e)}
+                  value={PhoneNumber}
+                  required
+                />
+              </form>
+            </div>
+            {role === "Tournament" ? (
+              <>
+                <div className="formBlock">
+                  <div>
+                    <p className="formInp_label">Тематический раздел</p>
+                    <FormControl fullWidth>
+                      <Select
+                        labelId="theme-select-label"
+                        id="theme-select"
+                        onChange={handleThemeChange}
+                        value={theme}
+                        className="formInputSelect"
+                      >
+                        <MenuItem value={"cybersport"}>Киберспорт</MenuItem>
+                        <MenuItem value={"design"}>Дизайн и 3D</MenuItem>
+                        <MenuItem value={"hackathon"}>Хакатон</MenuItem>
+                        <MenuItem value={"mobilography"}>Мобилография</MenuItem>
+                        <MenuItem value={"robotix"}>Робототехника</MenuItem>
+                        <MenuItem value={"dronerace"}>
+                          Дрон демонстрация
+                        </MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
+                </div>
+
+                {theme === "cybersport" && (
+                  <>
+                    <div className="formBlock">
+                      <div>
+                        <p className="formInp_label">
+                          Выберите свое направление
+                        </p>
+                        <FormControl fullWidth>
+                          <Select
+                            labelId="work-select-label"
+                            id="work-select"
+                            onChange={handleWorkChange}
+                            value={work}
+                            className="formInputSelect"
+                          >
+                            <MenuItem value={"Counter-Strike 2"}>
+                              Counter-Strike 2
+                            </MenuItem>
+                            {/* Добавьте другие направления, если необходимо */}
+                          </Select>
+                        </FormControl>
+                      </div>
+                    </div>
+
+                    <div className="formBlock">
+                      <div>
+                        <p className="formInp_label">Формат участия</p>
+                        <FormControl fullWidth>
+                          <Select
+                            labelId="format-select-label"
+                            id="format-select"
+                            onChange={handleFormatChange}
+                            value={format}
+                            className="formInputSelect"
+                          >
+                            <MenuItem value={"Одиночное"}>Одиночное</MenuItem>
+                            <MenuItem value={"Командное"}>Командное</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {theme === "design" && (
+                  <div className="formBlock">
+                    <div>
+                      <p className="formInp_label">Выберите свое направление</p>
+                      <FormControl fullWidth>
+                        <Select
+                          labelId="work-select-label"
+                          id="work-select"
+                          onChange={handleWorkChange}
+                          value={work}
+                          className="formInputSelect"
+                        >
+                          <MenuItem value={"3D дизайн"}>3D дизайн</MenuItem>
+                          <MenuItem value={"Motion дизайн"}>
+                            Motion дизайн
+                          </MenuItem>
+                          <MenuItem value={"UX/UI"}>UX/UI</MenuItem>
+                          <MenuItem value={"Графический дизайнер"}>
+                            Графический дизайнер
+                          </MenuItem>
+                          <MenuItem
+                            value={"3D визуализация(интерьер и экстерьер)"}
+                          >
+                            3D визуализация (интерьер и экстерьер)
+                          </MenuItem>
+                        </Select>
+                      </FormControl>
+                    </div>
+                  </div>
+                )}
+
+                {theme === "hackathon" && (
+                  <div className="formBlock">
+                    <div>
+                      <p className="formInp_label">Выберите свое направление</p>
+                      <FormControl fullWidth>
+                        <Select
+                          labelId="work-select-label"
+                          id="work-select"
+                          onChange={handleWorkChange}
+                          value={work}
+                          className="formInputSelect"
+                        >
+                          <MenuItem value={"Backend"}>Backend</MenuItem>
+                          <MenuItem value={"Frontend"}>Frontend</MenuItem>
+                          <MenuItem value={"Fullstack"}>Fullstack</MenuItem>
+                          <MenuItem value={"Android-IOS"}>Android-IOS</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </div>
+                  </div>
+                )}
+                <div>
+                  <p>Результат: {result}</p>
+                </div>
+              </>
+            ) : (
+              <></>
+            )}
+          </div>
+          <div className="regCheck">
+            <Checkbox onChange={(event) => setChecked(event.target.checked)} />
+            <p>Я прочел все условия и согласен с ними</p>
+          </div>
+          <div className="regBtnWrapper">
+            <button
+              className={`regBbtn regBtn${checked}`}
+              // onClick={() => sendData(`register_user/${theme}/`)}
+              onClick={() => sendData("/tournament-participant")}
+              disabled={!checked}
+            >
+              Зарегистрироваться
+            </button>
+          </div>
+          {regSt ? (
+            <div className="regBtnWrapper">
+              <button
+                className={`regBbtn regBtntrue`}
+                onClick={() => navigate("/")}
+                disabled={!checked}
+              >
+                На главную
+              </button>
+            </div>
+          ) : (
+            <></>
+          )}
+        </>
+      );
+    }
+  };
+
   return (
     <div className="regBlockbg">
       <div className="container">
@@ -424,7 +1107,7 @@ const RegisterForm = () => {
           ) : (
             <></>
           )}
-          <h2>Регистрация</h2>
+          <h2 className="regisTitle">Регистрация</h2>
           {role == "EXPO" ? (
             <>
               <div className="regForm_info">
@@ -436,7 +1119,7 @@ const RegisterForm = () => {
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
-                <div className="formBlock">
+                {/* <div className="formBlock">
                   <p className="formInp_label">
                     Полное юридическое наименование организации
                   </p>
@@ -445,25 +1128,25 @@ const RegisterForm = () => {
                     type="text"
                     onChange={(e) => setSurname(e.target.value)}
                   />
-                </div>
-                <div className="formBlock">
+                </div> */}
+                {/* <div className="formBlock">
                   <p className="formInp_label">Юридический адрес</p>
                   <input
                     className="formInput"
                     type="text"
                     onChange={(e) => setlegAdr(e.target.value)}
                   />
-                </div>
-                <div className="formBlock">
+                </div> */}
+                {/* <div className="formBlock">
                   <p className="formInp_label">ИНН</p>
                   <input
                     className="formInput"
                     type="text"
                     onChange={(e) => setInn(e.target.value)}
                   />
-                </div>
+                </div> */}
                 <div className="formBlock">
-                  <p className="formInp_label">ФИО руководителя </p>
+                  <p className="formInp_label">ФИО</p>
                   <input
                     className="formInput"
                     type="text"
@@ -486,14 +1169,14 @@ const RegisterForm = () => {
                     onChange={(e) => setactivity(e.target.value)}
                   />
                 </div>
-                <div className="formBlock">
+                {/* <div className="formBlock">
                   <p className="formInp_label">Веб-сайт</p>
                   <input
                     className="formInput"
                     type="text"
                     onChange={(e) => setsiteurl(e.target.value)}
                   />
-                </div>
+                </div> */}
                 <div className="formBlock">
                   <p className="formInp_label">Email</p>
                   <p className="message" style={{ color: "red" }}>
@@ -507,12 +1190,7 @@ const RegisterForm = () => {
                 </div>
                 <div className="formBlock">
                   <p className="formInp_label">Телефон</p>
-                  <form
-                    action=""
-                    method="post"
-                    id="cusCreate"
-                    autocomplete="off"
-                  >
+                  <form action="" method="post" id="cusCreate">
                     <input
                       type="tel"
                       name="telphone"
@@ -568,15 +1246,19 @@ const RegisterForm = () => {
                 />
                 <p>Я прочел все условия и согласен с ними</p>
               </div>
-              <button
-                className={`regBbtn regBtn${checked}`}
-                disabled={!checked}
-                onClick={() => sendData("register_company/it_expo/")}
-              >
-                Зарегистрироваться
-              </button>
+              <div className="regBtnWrapper">
+                <button
+                  className={`regBbtn regBtn${checked}`}
+                  disabled={!checked}
+                  onClick={() => sendData("/expo-participant")}
+                >
+                  Зарегистрироваться
+                </button>
+              </div>
             </>
           ) : role == "Tournament" ? (
+            setTournamentByHackatonChoosen(isHackatonChoosen)
+          ) : role == "Speaker" ? (
             <>
               <div className="regForm_info">
                 <div className="formBlock">
@@ -649,247 +1331,6 @@ const RegisterForm = () => {
                       placeholder="996 999777666"
                       title="Пример:996 999777666"
                       className="formInput"
-                      onChange={(e) => phoneHandle(e)}
-                      value={PhoneNumber}
-                      required
-                    />
-                  </form>
-                </div>{" "}
-                {role == "Tournament" ? (
-                  <>
-                    <div className="formBlock">
-                      <div>
-                        <p className="formInp_label">Тематический раздел</p>
-                        <FormControl fullWidth>
-                          <Select
-                            labelId="demo-multiple-name-label"
-                            id="demo-multiple-name"
-                            onChange={(event) => setTheme(event.target.value)}
-                            value={theme}
-                            className="formInputSelect"
-                          >
-                            <MenuItem value={"cybersport"}>Киберспорт</MenuItem>
-                            <MenuItem value={"design"}>Дизайн и 3D</MenuItem>
-                            <MenuItem value={"hackathon"}>Хакатон</MenuItem>
-                            <MenuItem value={"mobilography"}>
-                              Мобилография
-                            </MenuItem>
-                            <MenuItem value={"robotix"}>Робототехника</MenuItem>
-                            <MenuItem value={"dronerace"}>
-                              Дрон демонстрация
-                            </MenuItem>
-                          </Select>
-                        </FormControl>
-                      </div>
-                    </div>{" "}
-                    <div className="formBlock">
-                      {theme == "cybersport" ? (
-                        <div>
-                          <p className="formInp_label">
-                            Выберите свое направление
-                          </p>
-                          <FormControl fullWidth disabled={theme.length < 1}>
-                            <Select
-                              labelId="demo-multiple-name-label"
-                              id="demo-multiple-name"
-                              onChange={(event) => setWork(event.target.value)}
-                              value={work}
-                              className="formInputSelect"
-                            >
-                              <MenuItem value={"Counter-Strike 2"}>
-                                Counter-Strike 2
-                              </MenuItem>
-                              {/* <MenuItem value={"PUBG"}>PUBG</MenuItem>
-                              <MenuItem value={"Dota 2"}>Dota 2</MenuItem> */}
-                            </Select>
-                          </FormControl>
-                        </div>
-                      ) : theme == "design" ? (
-                        <div>
-                          <p className="formInp_label">
-                            Выберите свое направление
-                          </p>
-                          <FormControl fullWidth disabled={theme.length < 1}>
-                            <Select
-                              labelId="demo-multiple-name-label"
-                              id="demo-multiple-name"
-                              onChange={(event) => setWork(event.target.value)}
-                              value={work}
-                              className="formInputSelect"
-                            >
-                              <MenuItem value={"3D дизайн"}>3D дизайн</MenuItem>
-                              <MenuItem value={"Motionдизайн"}>
-                                Motion дизайн
-                              </MenuItem>
-                              <MenuItem value={"UX/UI"}>UX/UI</MenuItem>
-                              <MenuItem value={"Графический дизайнер"}>
-                                Графический дизайнер
-                              </MenuItem>
-                              <MenuItem
-                                value={"3D визуализация(интерьер и экстерьер)"}
-                              >
-                                3D визуализация (интерьер и экстерьер)
-                              </MenuItem>
-                            </Select>
-                          </FormControl>
-                        </div>
-                      ) : theme == "hackathon" ? (
-                        <div>
-                          <p className="formInp_label">
-                            Выберите свое направление
-                          </p>
-                          <FormControl fullWidth disabled={theme.length < 1}>
-                            <Select
-                              labelId="demo-multiple-name-label"
-                              id="demo-multiple-name"
-                              onChange={(event) => setWork(event.target.value)}
-                              value={work}
-                              className="formInputSelect"
-                            >
-                              <MenuItem value={"Backend"}>Backend</MenuItem>
-                              <MenuItem value={"Frontend"}>Frontend</MenuItem>
-                              <MenuItem value={"Fullstack"}>Fullstack</MenuItem>
-                              <MenuItem value={" Android-IOS"}>
-                                Android-IOS
-                              </MenuItem>
-                            </Select>
-                          </FormControl>
-                        </div>
-                      ) : (
-                        <div></div>
-                      )}
-                    </div>
-                    <div className="formBlock">
-                      {theme == "cybersport" ? (
-                        <div>
-                          <p className="formInp_label">Формат участия</p>
-                          <FormControl fullWidth disabled={theme.length < 1}>
-                            <Select
-                              labelId="demo-multiple-name-label"
-                              id="demo-multiple-name"
-                              onChange={(event) =>
-                                setFormat(event.target.value)
-                              }
-                              value={format}
-                              className="formInputSelect"
-                            >
-                              <MenuItem value={"Одиночное"}>Одиночное</MenuItem>
-                              <MenuItem value={"Командное"}>Командное</MenuItem>
-                            </Select>
-                          </FormControl>
-                        </div>
-                      ) : (
-                        <div></div>
-                      )}
-                    </div>
-                  </>
-                ) : (
-                  <></>
-                )}
-              </div>
-              <div className="regCheck">
-                <Checkbox
-                  onChange={(event) => setChecked(event.target.checked)}
-                />
-                <p>Я прочел все условия и согласен с ними</p>
-              </div>
-              <button
-                className={`regBbtn regBtn${checked}`}
-                onClick={() => sendData(`register_user/${theme}/`)}
-                disabled={!checked}
-              >
-                Зарегистрироваться
-              </button>
-              {regSt ? (
-                <button
-                  className={`regBbtn regBtntrue`}
-                  onClick={() => navigate("/")}
-                  disabled={!checked}
-                >
-                  На главную
-                </button>
-              ) : (
-                <></>
-              )}
-            </>
-          ) : role == "Speaker" ? (
-            <>
-              <div className="regForm_info">
-                <div className="formBlock">
-                  <p className="formInp_label">Имя</p>
-                  <input
-                    className="formInput"
-                    type="text"
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </div>
-                <div className="formBlock">
-                  <p className="formInp_label">Фамилия</p>
-                  <input
-                    className="formInput"
-                    type="text"
-                    onChange={(e) => setSurname(e.target.value)}
-                  />
-                </div>{" "}
-                <div className="formBlock">
-                  <p className="formInp_label">Отчество</p>
-                  <input
-                    className="formInput"
-                    type="text"
-                    onChange={(e) => setFatherName(e.target.value)}
-                  />
-                </div>{" "}
-                <div className="formBlock">
-                  <p className="formInp_label">Email</p>
-                  <p className="message" style={{ color: "red" }}>
-                    {message}
-                  </p>
-                  <input
-                    className="formInput"
-                    type="text"
-                    onChange={(e) => emailHandler(e)}
-                  />
-                </div>{" "}
-                <div className="formBlock">
-                  <p className="formInp_label">Страна</p>
-                  <input
-                    className="formInput"
-                    type="text"
-                    onChange={(e) => setCountry(e.target.value)}
-                  />
-                </div>{" "}
-                <div className="formBlock">
-                  <p className="formInp_label">Город</p>
-                  <input
-                    className="formInput"
-                    type="text"
-                    onChange={(e) => setCity(e.target.value)}
-                  />
-                </div>{" "}
-                <div className="formBlock">
-                  <p className="formInp_label">Дата рождения</p>
-                  <input
-                    max={"2024-01-01"}
-                    min={"1800-01-01"}
-                    className="formInput"
-                    type="date"
-                    onChange={(e) => setDateOfBirth(e.target.value)}
-                  />
-                </div>
-                <div className="formBlock">
-                  <p className="formInp_label">Телефон</p>
-                  <form
-                    action=""
-                    method="post"
-                    id="cusCreate"
-                    autocomplete="off"
-                  >
-                    <input
-                      type="tel"
-                      name="telphone"
-                      placeholder="996 999777666"
-                      title="Пример:996 999777666"
-                      className="formInput"
                       required
                       onChange={(e) => phoneHandle(e)}
                       value={PhoneNumber}
@@ -914,13 +1355,15 @@ const RegisterForm = () => {
                 />
                 <p>Я прочел все условия и согласен с ними</p>
               </div>
-              <button
-                className={`regBbtn regBtn${checked}`}
-                disabled={!checked}
-                onClick={() => sendData("register_user/speaker/")}
-              >
-                Зарегистрироваться
-              </button>
+              <div className="regBtnWrapper">
+                <button
+                  className={`regBbtn regBtn${checked}`}
+                  disabled={!checked}
+                  onClick={() => sendData("register_user/speaker/")}
+                >
+                  Зарегистрироваться
+                </button>
+              </div>
             </>
           ) : role == "Food" ? (
             <>
@@ -933,7 +1376,7 @@ const RegisterForm = () => {
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
-                <div className="formBlock">
+                {/* <div className="formBlock">
                   <p className="formInp_label">
                     Полное юридическое наименование организации
                   </p>
@@ -942,25 +1385,25 @@ const RegisterForm = () => {
                     type="text"
                     onChange={(e) => setSurname(e.target.value)}
                   />
-                </div>
-                <div className="formBlock">
+                </div> */}
+                {/* <div className="formBlock">
                   <p className="formInp_label">Юридический адрес</p>
                   <input
                     className="formInput"
                     type="text"
                     onChange={(e) => setlegAdr(e.target.value)}
                   />
-                </div>
-                <div className="formBlock">
+                </div> */}
+                {/* <div className="formBlock">
                   <p className="formInp_label">ИНН</p>
                   <input
                     className="formInput"
                     type="text"
                     onChange={(e) => setInn(e.target.value)}
                   />
-                </div>
+                </div> */}
                 <div className="formBlock">
-                  <p className="formInp_label">ФИО руководителя </p>
+                  <p className="formInp_label">ФИО</p>
                   <input
                     className="formInput"
                     type="text"
@@ -983,14 +1426,14 @@ const RegisterForm = () => {
                     onChange={(e) => setactivity(e.target.value)}
                   />
                 </div>
-                <div className="formBlock">
+                {/* <div className="formBlock">
                   <p className="formInp_label">Веб-сайт</p>
                   <input
                     className="formInput"
                     type="text"
                     onChange={(e) => setsiteurl(e.target.value)}
                   />
-                </div>
+                </div> */}
                 <div className="formBlock">
                   <p className="formInp_label">Email</p>
                   <p className="message" style={{ color: "red" }}>
@@ -1004,12 +1447,7 @@ const RegisterForm = () => {
                 </div>
                 <div className="formBlock">
                   <p className="formInp_label">Телефон</p>
-                  <form
-                    action=""
-                    method="post"
-                    id="cusCreate"
-                    autocomplete="off"
-                  >
+                  <form action="" method="post" id="cusCreate">
                     <input
                       type="tel"
                       name="telphone"
@@ -1021,7 +1459,7 @@ const RegisterForm = () => {
                       value={PhoneNumber}
                     />
                   </form>
-                </div>{" "}
+                </div>
                 <div className="formBlock">
                   <p className="formInp_label">Страна</p>
                   <input
@@ -1030,7 +1468,7 @@ const RegisterForm = () => {
                     onChange={(e) => setCountry(e.target.value)}
                   />
                 </div>
-                <div className="formBlock label2">
+                <div className="formBlock label2 foodTextarea">
                   <div>
                     <p className="formInp_label">
                       Опишите товары или услуги компании
@@ -1048,13 +1486,15 @@ const RegisterForm = () => {
                 />
                 <p>Я прочел все условия и согласен с ними</p>
               </div>
-              <button
-                className={`regBbtn regBtn${checked}`}
-                disabled={!checked}
-                onClick={() => sendData("register_company/food_zone/")}
-              >
-                Зарегистрироваться
-              </button>
+              <div className="regBtnWrapper">
+                <button
+                  className={`regBbtn regBtn${checked}`}
+                  disabled={!checked}
+                  onClick={() => sendData("/foodcourt-participant")}
+                >
+                  Зарегистрироваться
+                </button>
+              </div>
             </>
           ) : role == "Master" ? (
             <>
@@ -1074,7 +1514,7 @@ const RegisterForm = () => {
                     type="text"
                     onChange={(e) => setSurname(e.target.value)}
                   />
-                </div>{" "}
+                </div>
                 <div className="formBlock">
                   <p className="formInp_label">Отчество</p>
                   <input
@@ -1082,7 +1522,7 @@ const RegisterForm = () => {
                     type="text"
                     onChange={(e) => setFatherName(e.target.value)}
                   />
-                </div>{" "}
+                </div>
                 <div className="formBlock">
                   <p className="formInp_label">Email</p>
                   <p className="message" style={{ color: "red" }}>
@@ -1093,7 +1533,7 @@ const RegisterForm = () => {
                     type="text"
                     onChange={(e) => emailHandler(e)}
                   />
-                </div>{" "}
+                </div>
                 <div className="formBlock">
                   <p className="formInp_label">Страна</p>
                   <input
@@ -1101,7 +1541,7 @@ const RegisterForm = () => {
                     type="text"
                     onChange={(e) => setCountry(e.target.value)}
                   />
-                </div>{" "}
+                </div>
                 <div className="formBlock">
                   <p className="formInp_label">Город</p>
                   <input
@@ -1109,7 +1549,7 @@ const RegisterForm = () => {
                     type="text"
                     onChange={(e) => setCity(e.target.value)}
                   />
-                </div>{" "}
+                </div>
                 <div className="formBlock">
                   <p className="formInp_label">Дата рождения</p>
                   <input
@@ -1122,12 +1562,7 @@ const RegisterForm = () => {
                 </div>
                 <div className="formBlock">
                   <p className="formInp_label">Телефон</p>
-                  <form
-                    action=""
-                    method="post"
-                    id="cusCreate"
-                    autocomplete="off"
-                  >
+                  <form action="" method="post" id="cusCreate">
                     <input
                       type="tel"
                       name="telphone"
@@ -1139,7 +1574,7 @@ const RegisterForm = () => {
                       value={PhoneNumber}
                     />
                   </form>
-                </div>{" "}
+                </div>
                 <div className="formBlock">
                   <div>
                     <p className="formInp_label">
@@ -1159,17 +1594,231 @@ const RegisterForm = () => {
                 />
                 <p>Я прочел все условия и согласен с ними</p>
               </div>
-              <button
-                className={`regBbtn regBtn${checked}`}
-                disabled={!checked}
-                onClick={() => sendData("register_user/masterclass/")}
-              >
-                Зарегистрироваться
-              </button>
+              <div className="regBtnWrapper">
+                <button
+                  className={`regBbtn regBtn${checked}`}
+                  disabled={!checked}
+                  onClick={() => sendData("register_user/masterclass/")}
+                >
+                  Зарегистрироваться
+                </button>
+              </div>
+            </>
+          ) : role == "visitor" ? (
+            <>
+              <div className="regForm_info">
+                <div className="formBlock">
+                  <p className="formInp_label">Имя</p>
+                  <input
+                    className="formInput"
+                    type="text"
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="formBlock">
+                  <p className="formInp_label">Город</p>
+                  <input
+                    className="formInput"
+                    type="text"
+                    onChange={(e) => setCity(e.target.value)}
+                  />
+                </div>
+                <div className="formBlock">
+                  <p className="formInp_label">Дата рождения</p>
+                  <input
+                    max={"2024-01-01"}
+                    min={"1800-01-01"}
+                    className="formInput"
+                    type="date"
+                    onChange={(e) => setAge(e.target.value)}
+                  />
+                </div>
+                <div className="formBlock">
+                  <p className="formInp_label">Телефон</p>
+                  <form action="" method="post" id="cusCreate">
+                    <input
+                      type="tel"
+                      name="telphone"
+                      placeholder="996 999777666"
+                      title="Пример:996 999777666"
+                      className="formInput"
+                      required
+                      onChange={(e) => phoneHandle(e)}
+                      value={PhoneNumber}
+                    />
+                  </form>
+                </div>
+                <div className="formBlock">
+                  <div>
+                    <p className="formInp_label">
+                      Впишите вид своей деятельности и какую активность хотите
+                      продемонстрировать
+                    </p>
+                    <textarea
+                      className="formTextarea"
+                      onChange={(e) => setVisitorTheme(e.target.value)}
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <div className="regCheck">
+                <Checkbox
+                  onChange={(event) => setChecked(event.target.checked)}
+                />
+                <p>Я прочел все условия и согласен с ними</p>
+              </div>
+              <div className="regBtnWrapper">
+                <button
+                  className={`regBbtn regBtn${checked}`}
+                  disabled={!checked}
+                  onClick={() => sendData("/visitor")}
+                >
+                  Зарегистрироваться
+                </button>
+              </div>
+            </>
+          ) : role === "partners" ? (
+            <>
+              <div className="regForm_info">
+                <div className="formBlock">
+                  <p className="formInp_label">Название компании</p>
+                  <input
+                    className="formInput"
+                    type="text"
+                    onChange={(e) => setPartnersCompanyName(e.target.value)}
+                  />
+                </div>
+
+                <div className="formBlock">
+                  <p className="formInp_label">Имя</p>
+                  <input
+                    className="formInput"
+                    type="text"
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="formBlock">
+                  <p className="formInp_label">Должность</p>
+                  <input
+                    className="formInput"
+                    type="text"
+                    onChange={(e) => setjbtitle(e.target.value)}
+                  />
+                </div>
+                <div className="formBlock">
+                  <p className="formInp_label">Телефон</p>
+                  <form action="" method="post" id="cusCreate">
+                    <input
+                      type="tel"
+                      name="telphone"
+                      placeholder="996 999777666"
+                      title="Пример:996 999777666"
+                      className="formInput"
+                      required
+                      onChange={(e) => phoneHandle(e)}
+                      value={PhoneNumber}
+                    />
+                  </form>
+                </div>
+                <div className="formBlock">
+                  <div>
+                    <p className="formInp_label">Тематический раздел</p>
+                    <FormControl fullWidth>
+                      <Select
+                        labelId="demo-multiple-name-label"
+                        id="demo-multiple-name"
+                        onChange={(event) => setTheme2(event.target.value)}
+                        value={theme2}
+                        className="formInputSelect"
+                      >
+                        <MenuItem
+                          value={
+                            "Баннерная и наружная реклама, реклама на LED экранах"
+                          }
+                        >
+                          Баннерная и наружная реклама, реклама на LED экранах
+                        </MenuItem>
+                        <MenuItem
+                          value={
+                            "Спонсорство мероприятий, активностей и конкурсовслуги"
+                          }
+                        >
+                          Спонсорство мероприятий, активностей и конкурсовслуги
+                        </MenuItem>
+                        <MenuItem value={"Мерчандайзинг и печатная продукция"}>
+                          Мерчандайзинг и печатная продукция
+                        </MenuItem>
+                        <MenuItem value={"Брендирование зон и площадок"}>
+                          Брендирование зон и площадок
+                        </MenuItem>
+                        <MenuItem
+                          value={
+                            "Экспозиционные зоны и демонстрационные стенды"
+                          }
+                        >
+                          Экспозиционные зоны и демонстрационные стенды
+                        </MenuItem>
+                        <MenuItem
+                          value={"Спонсорство инфраструктуры и логистики"}
+                        >
+                          Спонсорство инфраструктуры и логистики
+                        </MenuItem>
+                        <MenuItem value={"Спикерское партнёрство"}>
+                          Спикерское партнёрство
+                        </MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
+                </div>
+                {/* <div className="formBlock">
+                  <p className="formInp_label">Город</p>
+                  <input
+                    className="formInput"
+                    type="text"
+                    onChange={(e) => setCity(e.target.value)}
+                  />
+                </div> */}
+                {/* <div className="formBlock">
+                  <p className="formInp_label">Дата рождения</p>
+                  <input
+                    max={"2024-01-01"}
+                    min={"1800-01-01"}
+                    className="formInput"
+                    type="date"
+                    onChange={(e) => setAge(e.target.value)}
+                  />
+                </div> */}
+                {/* <div className="formBlock"> */}
+                {/* <div>
+                    <p className="formInp_label">
+                      Впишите вид своей деятельности и какую активность хотите
+                      продемонстрировать
+                    </p>
+                    <textarea
+                      className="formTextarea"
+                      onChange={(e) => setVisitorTheme(e.target.value)}
+                    ></textarea>
+                  </div> */}
+                {/* </div> */}
+              </div>
+              <div className="regCheck">
+                <Checkbox
+                  onChange={(event) => setChecked(event.target.checked)}
+                />
+                <p>Я прочел все условия и согласен с ними</p>
+              </div>
+              <div className="regBtnWrapper">
+                <button
+                  className={`regBbtn regBtn${checked}`}
+                  disabled={!checked}
+                  onClick={() => sendData("/partners")}
+                >
+                  Зарегистрироваться
+                </button>
+              </div>
             </>
           ) : (
             <div className="notFound_block">
-              {" "}
               <img
                 loading="lazy"
                 src={not404}

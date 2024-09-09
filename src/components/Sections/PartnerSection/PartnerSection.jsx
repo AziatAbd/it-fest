@@ -21,12 +21,13 @@ import tv1 from "../../../assets/partnerslogo/gr2.svg";
 import eltr from "../../../assets/partnerslogo/eltr.svg";
 import gr from "../../../assets/partnerslogo/gr.svg";
 import sxod from "../../../assets/partnerslogo/sxodim.svg";
+import metaLogo from "../../../assets/partnerslogo/metaLogo.svg";
 
 import "./PartnerSectionn.css";
 
 const PartnerSection = () => {
   return (
-    <div className="partnerBlock">
+    <div className="partnerBlock" id="sponsors">
       <div className="partnerRank_block">
         <div className="partnerRank1">
           <h2 className="partnerBlock_title">Генеральный спонсор</h2>
@@ -97,7 +98,7 @@ const PartnerSection = () => {
               alt="error"
               className="swiperImgs"
             />
-          </SwiperSlide>{" "}
+          </SwiperSlide>
           <SwiperSlide>
             <img
               loading="lazy"
@@ -105,7 +106,15 @@ const PartnerSection = () => {
               alt="error"
               className="swiperImgs"
             />
-          </SwiperSlide>{" "}
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              loading="lazy"
+              src={metaLogo}
+              alt="error"
+              className="swiperImgs metaLogo"
+            />
+          </SwiperSlide>
           <SwiperSlide>
             <img
               loading="lazy"
