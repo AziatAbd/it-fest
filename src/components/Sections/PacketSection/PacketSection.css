@@ -140,6 +140,9 @@
   .pack1 > h2 {
     font-size: 1.2rem;
   }
+  .packetMain_block {
+    margin: 50px auto;
+  }
 }
 @media screen and (max-width: 425px) {
   .packet_Main_text {

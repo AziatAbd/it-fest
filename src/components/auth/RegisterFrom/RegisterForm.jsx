@@ -264,16 +264,12 @@ const RegisterForm = () => {
     if (fork == "/foodcourt-participant") {
       if (
         !Name ||
-        // !Surname ||
-        // !legAdr ||
-        // !inn ||
-        // !FatherName ||
         !jbtitle ||
         !activity ||
-        // !siteurl ||
         !Email ||
         !Country ||
-        !compProd
+        !compProd ||
+        !PhoneNumber
       ) {
         alert("Заполните все поля!");
         return;
@@ -282,13 +278,8 @@ const RegisterForm = () => {
       }
       const formdata = {
         Brand_name: Name,
-        // Legal_name: Surname,
-        // Legal_address: legAdr,
-        // INN: inn,
-        // Supervisor_Name: FatherName,
         Job_Title: jbtitle,
         Company_Activity: activity,
-        // Web_Site: siteurl,
         Email: Email,
         Country: Country,
         Phone_number: PhoneNumber,
@@ -305,13 +296,8 @@ const RegisterForm = () => {
     if (fork == "/expo-participant") {
       if (
         !Name ||
-        // !Surname ||
-        // !legAdr ||
-        // !inn ||
-        // !FatherName ||
         !jbtitle ||
         !activity ||
-        // !siteurl ||
         !Email ||
         !Country ||
         !PhoneNumber ||
@@ -326,13 +312,8 @@ const RegisterForm = () => {
       }
       const formdata = {
         Brand_name: Name,
-        Legal_name: Surname,
-        Legal_address: legAdr,
-        INN: inn,
-        Supervisor_Name: FatherName,
         Job_Title: jbtitle,
         Company_Activity: activity,
-        Web_Site: siteurl,
         Email: Email,
         Country: Country,
         Phone_number: PhoneNumber,
@@ -349,7 +330,7 @@ const RegisterForm = () => {
       }
     }
     if (fork == "/visitor") {
-      if (!Name || !City || !Age || !PhoneNumber || !setVisitorTheme) {
+      if (!Name || !City || !Age || !PhoneNumber || !VisitorTheme) {
         alert("Заполните все поля!1");
         return;
       } else {
@@ -376,6 +357,7 @@ const RegisterForm = () => {
         PhoneNumber: PhoneNumber,
         DateOfBirth: DateOfBirth,
         course: result,
+        theme: theme,
       };
       console.log(formdata);
       if (
@@ -543,21 +525,7 @@ const RegisterForm = () => {
       return (
         <>
           <div className="formBlock hackhathonRules">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
-              quas dolorum qui? Laboriosam temporibus suscipit aliquid tenetur
-              ipsa molestias voluptatem ipsam eos voluptas labore nisi minima,
-              numquam consequuntur autem cupiditate ab, totam libero impedit!
-              Nobis iure ab maiores. Deleniti repellendus modi distinctio
-              facilis, recusandae non, obcaecati, odit cupiditate harum
-              blanditiis similique? Nobis voluptatum doloribus earum sit,
-              necessitatibus quibusdam. Eos dolore dolorum distinctio modi ipsum
-              quibusdam ipsam explicabo beatae nihil, voluptas natus tempore
-              labore nisi facere accusantium eveniet officiis dignissimos
-              aspernatur sint! Quod libero assumenda placeat tempore harum. Nemo
-              dolor ipsam vitae labore cupiditate facilis recusandae blanditiis.
-              Aspernatur laudantium quas inventore.
-            </p>
+            <p>{/* the text of the rules is posted here */}</p>
           </div>
           <div className="formBlock">
             <div className="hackathonInputWrapper">
@@ -805,16 +773,7 @@ const RegisterForm = () => {
               <button
                 className={`regBbtn regBtn${checked}`}
                 disabled={!checked}
-                onClick={() => {
-                  const formdata = {
-                    hackathonTeamName: hackathonTeamName,
-                    Country: Country,
-                    City: City,
-                    Theme: theme,
-                    hackathonTeammates: teammates,
-                  };
-                  console.log("Отправляемые данные:", formdata); // вывод данных в консоль
-                }}
+                onClick={() => sendData("/hackathonTeam")}
               >
                 Зарегистрироваться
               </button>

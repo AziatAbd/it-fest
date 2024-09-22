@@ -1,8 +1,28 @@
+button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
 .bg7 {
   background: url("/src/assets/aboutbg.svg");
   background-repeat: no-repeat;
   background-size: 120%;
   background-position: center;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+.bg7::before {
+  content: "";
+  position: absolute;
+  top: -5%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url("./MainImages/bg.png") top/contain no-repeat;
 }
 .expoAbout {
   display: grid;
@@ -24,10 +44,12 @@
 .swiper-slide {
   margin: 0 auto;
 }
-.expoAbout_div > h2 {
+.expoAboutButton {
   font-weight: 900;
   font-size: 2rem;
-  margin-bottom: 2rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
 }
 .exp1 > p {
   margin-bottom: 1rem;
@@ -39,9 +61,6 @@
 .exp3 {
   line-height: 1.5rem;
 }
-.exp2 {
-  padding-bottom: 20% !important;
-}
 .aboutImg {
   position: absolute;
   width: 6rem;
@@ -51,29 +70,157 @@
   right: 0;
 }
 .aboutImg2 {
-  bottom: -2rem;
+  bottom: 2rem;
   right: 0;
 }
-@media screen and (max-width:1220px) {
+
+.expoInner {
+  height: 0;
+  display: none;
+}
+
+.expoInnerActive {
+  height: 100%;
+  display: block;
+}
+
+.expoInner2 {
+  height: 0;
+  display: none;
+}
+
+.expoInnerActive2 {
+  height: 100%;
+  display: block;
+}
+
+.expoAboutButton {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  font-weight: 900;
+  font-size: 2rem;
+}
+.expoAboutButton::after,
+.expoAboutButton::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 20px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+.expoAboutButton::after {
+  left: 50%;
+  transform: rotate(45deg);
+}
+.expoAboutButton::before {
+  left: 54%;
+  transform: rotate(-45deg);
+}
+.expoAboutButtonActive {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  margin-bottom: 30px;
+}
+.expoAboutButtonActive::after,
+.expoAboutButtonActive::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 20px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+.expoAboutButtonActive::after {
+  left: 50%;
+  transform: rotate(-45deg);
+}
+.expoAboutButtonActive::before {
+  left: 54%;
+  transform: rotate(45deg);
+}
+
+.expoAboutButton2 {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  font-weight: 900;
+  font-size: 2rem;
+}
+.expoAboutButton2::after,
+.expoAboutButton2::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 20px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+.expoAboutButton2::after {
+  left: 50%;
+  transform: rotate(45deg);
+}
+.expoAboutButton2::before {
+  left: 54%;
+  transform: rotate(-45deg);
+}
+.expoAboutButtonActive2 {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  margin-bottom: 30px;
+}
+.expoAboutButtonActive2::after,
+.expoAboutButtonActive2::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 20px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+.expoAboutButtonActive2::after {
+  left: 50%;
+  transform: rotate(-45deg);
+}
+.expoAboutButtonActive2::before {
+  left: 54%;
+  transform: rotate(45deg);
+}
+
+/* new one */
+@media screen and (max-width: 1220px) {
   .expoAbout {
     grid-template-columns: repeat(2, 1fr);
     width: 90%;
   }
-  .exp2{
+  .exp2 {
     grid-row: 2/3;
   }
-
 }
-@media screen and (max-width:1024px) {
+@media screen and (max-width: 1024px) {
   .expoAbout {
     grid-template-columns: repeat(1, 1fr);
     width: 90%;
   }
-.exp2{
-  padding-bottom: 2rem !important;
-  grid-row: 3 /3;
-}
-
+  .exp2 {
+    padding-bottom: 2rem !important;
+    grid-row: 3 /3;
+  }
 }
 /* @media screen and (max-width: 1024px) {
   .expoAbout {

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types"; // Импортируем PropTypes
 
 export const authContext = React.createContext();
 export const useAuth = () => useContext(authContext);
@@ -12,11 +11,9 @@ const AuthContextProvider = ({ children }) => {
   const [errorr, setErrorr] = useState("");
   const [regSt, setRegSt] = useState(false);
 
-  const navigate = useNavigate();
-
   async function register(formData, fork) {
     try {
-      const response = await fetch(`${API}/${fork}`, {
+      const response = await fetch(`${API}${fork}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,6 +43,7 @@ const AuthContextProvider = ({ children }) => {
     const result = await response.json();
     console.log(result);
   }
+
   return (
     <authContext.Provider
       value={{
@@ -61,6 +59,11 @@ const AuthContextProvider = ({ children }) => {
       {children}
     </authContext.Provider>
   );
+};
+
+// Добавляем PropTypes для children
+AuthContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default AuthContextProvider;

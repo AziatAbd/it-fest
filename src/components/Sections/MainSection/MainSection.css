@@ -1,8 +1,20 @@
+.newBugu {
+  width: 200px;
+  height: 150px;
+  margin-bottom: 40px;
+}
+
+.newBugu img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .firstBlock_main {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: calc(100vh - 6rem);
+  justify-content: center;
+  flex-direction: column;
 }
 .bg1 {
   z-index: 1;
@@ -10,6 +22,7 @@
   background-size: 100%;
   position: relative;
 }
+
 .firstBlock_logo {
   z-index: 2;
   width: 40%;
@@ -21,7 +34,7 @@
   background-clip: text;
 }
 .firstMain_text {
-  width: 50%;
+  width: 100%;
   font-family: "Russo One", sans-serif !important;
 
   font-size: 2.5em;
@@ -40,13 +53,6 @@
   font-weight: 400;
   font-size: 0.7em;
 }
-.secondBlock_org {
-  text-align: center;
-  font-family: "Russo One", sans-serif;
-  z-index: 2;
-  position: relative;
-  margin-bottom: 7rem;
-}
 .secondBlock_text {
   margin-bottom: 2rem;
   font-weight: 400;
@@ -55,6 +61,7 @@
 }
 
 .secondBlock_sponsors {
+  gap: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -62,6 +69,10 @@
   width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
+}
+.square {
+  width: 130px !important;
+  height: 130px !important;
 }
 .logopat2 {
   width: 17rem !important;
@@ -75,18 +86,28 @@
 }
 .logobigb {
   width: 90%;
+  gap: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
+}
+
+.foel {
+  width: 130px !important;
+  height: 130px;
+  background-size: cover;
 }
 .logobigbb {
   width: 12rem;
+  margin: 0 auto;
 }
 .logobigbb2 {
   width: 9rem;
 }
 .logobigm {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,7 +134,6 @@
 .heroWrapper {
   position: relative;
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -131,6 +151,7 @@
   }
 }
 .heroReg {
+  margin-top: 15px;
   border: none;
   color: #fff;
   width: 300px;
@@ -148,37 +169,66 @@
 .heroReg:hover {
   opacity: 0.9;
 }
-.organizersMetaLogo {
-  width: 240px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* width: 100%;
-  height: 100%; */
-  object-fit: cover;
-  background: url("../../../assets/partnerslogo/metaLogo.svg") center/cover
-    no-repeat;
-}
 
 .logoCom {
   font-size: 40px;
   letter-spacing: 2px;
   font-family: serif;
 }
+#irsen {
+  width: 300px !important;
+  height: 100px !important;
+  background-size: cover;
+}
+
+#hoster {
+  width: 120px;
+  height: 120px;
+}
+
+.itFest {
+  width: 100%;
+  font-size: 5.5em !important;
+  position: relative;
+  top: 105px;
+}
+.itFest span {
+  color: #25c6f9;
+}
+.it2024 {
+  width: 100%;
+  font-size: 8.5em;
+}
+
+.cyberKr {
+  font-size: 5rem;
+  position: relative;
+  top: -90px;
+}
+.cyberKr span {
+  color: #25c6f9;
+}
 
 @media screen and (max-width: 1345px) {
-  .firstMain_text {
-    font-size: 2em;
-  }
-  .firstMain_text > p {
-    font-size: 1em;
-  }
-  .firstMain_text > h2 {
-    font-size: 2em;
-  }
   #firstDate {
     font-size: 0.7em;
+  }
+
+  .itFest {
+    width: 100%;
+    font-size: 3.5em !important;
+    position: relative;
+    top: 75px;
+  }
+  .it2024 {
+    width: 100%;
+    font-size: 5.5em;
+  }
+
+  .cyberKr {
+    font-size: 3.3rem;
+    position: relative;
+    top: -65px;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -190,8 +240,27 @@
   }
 }
 @media screen and (max-width: 930px) {
+  .itFest {
+    width: 100%;
+    font-size: 2.5em !important;
+    position: relative;
+    top: 50px;
+  }
+  .it2024 {
+    width: 100%;
+    font-size: 4em;
+  }
+
+  .cyberKr {
+    font-size: 2.4rem;
+    position: relative;
+    top: -39px;
+  }
+  .secondBlock_sponsors {
+    gap: 10px;
+  }
   .secondBlock_sponsors > img {
-    margin: 2rem;
+    margin: 1rem;
     /* flex-direction: column; */
   }
   .logopat,
@@ -200,13 +269,42 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .itFest {
+    width: 100%;
+    font-size: 2.2em !important;
+    position: relative;
+    top: 35px;
+  }
+  .it2024 {
+    width: 100%;
+    font-size: 3.5em;
+  }
+
+  .cyberKr {
+    font-size: 1.7rem;
+    position: relative;
+    top: -30px;
+  }
+  #cifrocom {
+    width: 300px !important;
+    height: 100px !important;
+  }
+
   .logobigb {
+    gap: 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+
   #kia {
     order: 4;
+    width: 200px !important;
+    height: 120px !important;
+  }
+  .foel {
+    order: 5;
+    grid-column: 1/3;
   }
   #ros {
     order: 3;
@@ -215,21 +313,26 @@
     order: 2;
   }
   #jkm {
+    width: 300px;
+    height: 150px;
     order: 1;
   }
   .logobigbb,
   .logobigbb2 {
     margin: 0 auto;
   }
+
+  .logopat {
+    margin: 1rem;
+  }
+
+  #logo6 {
+    width: 300px;
+    height: 150px;
+  }
   .firstMain_text {
     font-size: 2em;
     width: 100%;
-  }
-  .firstMain_text > p {
-    font-size: 1em;
-  }
-  .firstMain_text > h2 {
-    font-size: 2em;
   }
   #firstDate {
     font-size: 1em;
@@ -248,10 +351,16 @@
   .firstBlock_logo {
     width: 55%;
   }
+
+  .newBugu {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+  }
 }
+
 @media screen and (max-width: 450px) {
   .firstMain_text {
-    font-size: 1.5em;
     width: 100%;
   }
 
@@ -267,7 +376,6 @@
 }
 @media screen and (max-width: 375px) {
   .firstMain_text {
-    font-size: 1em;
     width: 100%;
   }
 }

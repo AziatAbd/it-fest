@@ -114,3 +114,25 @@
   font-size: 25px;
   font-weight: 600;
 }
+
+@media screen and (max-width: 991px) {
+  .programBack {
+    display: block !important;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .programListWrapper {
+    flex-direction: column;
+  }
+
+  .programList {
+    width: 100%;
+  }
+
+  .programHeading {
+    gap: 20px;
+    flex-direction: column;
+  }
+}

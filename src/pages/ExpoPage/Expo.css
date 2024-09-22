@@ -1,5 +1,26 @@
-.expoWrapper {
-  padding: 80px 0;
+.expoBtnBack {
+  cursor: pointer;
+  padding: 20px 40px;
+  background-color: #2663ff;
+}
+
+.prezWrapper {
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prezImgWrapper {
+  width: 100%;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.prezImgWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .expoMain_block {
@@ -15,21 +36,12 @@
   align-items: center;
   justify-content: center;
 }
-.expoMain_block::before {
-  content: "";
-  position: absolute;
-  top: -5%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: url("./MainImages/bg.png") top/contain no-repeat;
-}
 .expo_Main_text {
   position: absolute;
   top: -36px;
   background-color: #14063d;
   padding: 20px;
+  color: #fff;
   margin-bottom: 2rem;
 }
 .expoVariants {
@@ -79,12 +91,14 @@
 }
 
 .expoVar_text {
+  color: #fff;
   font-family: "Inter", sans-serif;
   font-style: italic;
   font-size: 2rem;
   font-weight: 900;
 }
 .sxpoVar_subtitle {
+  color: #fff;
   font-size: 1.5rem;
   text-align: center;
 }

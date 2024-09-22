@@ -31,14 +31,11 @@
 
 .secondBlock_video {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 5rem;
 }
-
-.secondBlock_video > div {
-  width: 40%;
+.secondVideo_text {
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -50,12 +47,8 @@
   z-index: 2;
 }
 @media screen and (max-width: 1200px) {
-  .secondViedo {
-    width: 100% !important;
-  }
-
   .secondBlock_video > div {
-    width: 45%;
+    width: 100%;
   }
   .secondInfo {
     display: grid;
@@ -73,6 +66,12 @@
   }
   .secondViedo {
     margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .secondVideo_text {
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 }
 @media screen and (max-width: 425px) {

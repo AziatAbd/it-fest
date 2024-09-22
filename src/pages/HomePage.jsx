@@ -1,5 +1,6 @@
 import React, { lazy } from "react";
 import Layout from "../components/Layout/Layout";
+import { Hero } from "../components/Sections/Hero/Hero";
 
 const MainSection = lazy(() =>
   import("../components/Sections/MainSection/MainSection")
@@ -30,11 +31,12 @@ const HomePage = () => {
   return (
     <div style={{ color: "white" }}>
       <Layout>
+        <Hero />
         <MainSection />
+        <TournamentsSection />
         <SecondSection />
         <PartnerSection />
         <AboutSection />
-        <TournamentsSection />
         <PacketSection />
         <ExpoSection />
         <WorkSection />

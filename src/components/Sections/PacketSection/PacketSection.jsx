@@ -9,17 +9,17 @@ const PacketSection = () => {
       <div className="packetVariants">
         <div className="pack1block">
           <div className="pack1">
-            <h2>СОВМЕСТНО С</h2>{" "}
+            <h2>СОВМЕСТНО С</h2>
             <img loading="lazy" src={htp} alt="" className="packetImg2" />
           </div>
           <p className="packeInfo">
-            Если вы или ваша коллега сделали значительный вклад в развитие IT,
-            проявили лидерство, внедрили инновационные решения или вдохновили
-            других, эта номинация для вас!
+            Если вы или ваша коллега внесли значительный вклад в развитие IT,
+            проявили лидерские качества, внедрили инновационные решения или
+            вдохновили других, эта номинация для вас!
           </p>
           <a
             className="packetBtn packBtn1"
-            href="https://wa.me/996555060955"
+            href="https://wa.me/996990088589"
             target="_blank"
           >
             Подробнее

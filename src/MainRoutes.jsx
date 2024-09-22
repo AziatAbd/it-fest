@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
 import RegisterForm from "./components/auth/RegisterFrom/RegisterForm";
 import { Program } from "./components/Program/Program";
+import { Expo } from "./pages/ExpoPage/Expo";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -25,6 +26,11 @@ const MainRoutes = () => {
       link: "/program",
       element: <Program />,
       id: 4,
+    },
+    {
+      link: "/expo",
+      element: <Expo />,
+      id: 5,
     },
   ];
   return (

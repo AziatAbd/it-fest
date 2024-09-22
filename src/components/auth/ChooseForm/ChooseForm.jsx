@@ -12,7 +12,7 @@ const ChooseForm = () => {
   console.log(stRole);
   console.log(setStrole);
   return (
-    <di>
+    <div>
       <Breadcrumbs
         separator={<NavigateNextIcon fontSize="small" />}
         aria-label="breadcrumb"
@@ -109,7 +109,7 @@ const ChooseForm = () => {
           </div>
         </div>
       </div>
-    </di>
+    </div>
   );
 };
 

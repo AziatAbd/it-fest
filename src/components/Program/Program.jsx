@@ -11,7 +11,7 @@ export const Program = () => {
     <div className="program">
       <div className="container">
         <div className="programHeading">
-          <a className="navBlock_nav programBack" onClick={() => navigate("/")}>
+          <a className="donwloadBtn programBack" onClick={() => navigate("/")}>
             На главную
           </a>
           <a className="donwloadBtn" href={img1} download={"day-1.png"}>

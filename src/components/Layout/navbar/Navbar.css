@@ -6,6 +6,11 @@ a {
 .headerLogo {
   margin-left: 0;
   margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
 
 .navBlock_main {
@@ -22,7 +27,8 @@ a {
   z-index: 2 !important;
 }
 .navBlock_logo {
-  width: 5rem;
+  width: 6rem;
+  object-fit: contain;
 }
 
 .navBlock_nav {
