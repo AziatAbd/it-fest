@@ -1,6 +1,4 @@
-import React from "react";
 import "./SecondSection.css";
-import ReactPlayer from "react-player/lazy";
 import el4 from "../../../assets/elements/el4.svg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -49,9 +47,9 @@ const SecondSection = () => {
       <p className="secondBlock_title">О мероприятии</p>
       <div className="secondBlock_video">
         <div className="secondVideo_text">
-          IT FEST 2024 "CYBER KYRGYZSTAN" — это крупнейшее технологическое
-          событие в Кыргызстане, посвященное инновациям в сфере информационных
-          технологий.
+          IT FEST 2024 &quot;CYBER KYRGYZSTAN&quot; — это крупнейшее
+          технологическое событие в Кыргызстане, посвященное инновациям в сфере
+          информационных технологий.
           <p>
             Организуемый в формате фестиваля, IT FEST собирает ведущих
             специалистов, стартапы, инвесторов, студентов и энтузиастов

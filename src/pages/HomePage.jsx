@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import { lazy } from "react";
 import Layout from "../components/Layout/Layout";
 import { Hero } from "../components/Sections/Hero/Hero";
 

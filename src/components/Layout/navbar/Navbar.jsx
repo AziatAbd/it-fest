@@ -37,9 +37,9 @@ const Navbar = () => {
       <div className="container">
         <div className="navBlock_main">
           <div className="headerLogo" onClick={() => navigate("/")}>
-            <img src={logo} alt="error" className="navBlock_logo" />
-            <img src={irsenLogo} alt="error" className="navBlock_logo" />
+            <img src={logo} alt="error" className="navBlock_logo bish" />
             <img src={peaksoftLogo} alt="error" className="navBlock_logo" />
+            <img src={irsenLogo} alt="error" className="navBlock_logo irsen" />
           </div>
           {/* desktop navbar */}
           <div className="navBlock_mini">

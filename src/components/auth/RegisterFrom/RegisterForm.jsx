@@ -37,10 +37,7 @@ const RegisterForm = () => {
   const [speech_theme, setSpeech_theme] = useState("");
   const [VisitorTheme, setVisitorTheme] = useState("");
   const [message, setMessage] = useState("");
-  const [legAdr, setlegAdr] = useState("");
-  const [inn, setInn] = useState(0);
   const [jbtitle, setjbtitle] = useState("");
-  const [siteurl, setsiteurl] = useState("");
   const [activity, setactivity] = useState("");
   const [result, setResult] = useState("");
   const [partnersCompanyName, setPartnersCompanyName] = useState("");

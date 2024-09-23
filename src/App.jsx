@@ -1,5 +1,3 @@
-import React from "react";
-import Layout from "./components/Layout/Layout";
 import MainRoutes from "./MainRoutes";
 import AuthContextProvider from "./context/AuthContextProvider";
 

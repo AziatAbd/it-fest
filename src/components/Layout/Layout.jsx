@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import Navbar from "./navbar/Navbar";
 import Footer from "./footer/Footer";
 import { CircularProgress } from "@mui/material";
@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </Suspense>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

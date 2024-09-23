@@ -1,415 +1,415 @@
 .bg5 {
-    background: url("/src/assets/bgtour.svg");
-    background-repeat: repeat;
-    background-size: 100% 100%;
-    padding-top: 5rem;
+  background: url("/src/assets/bgtour.svg");
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  padding-top: 5rem;
 }
 
 .tourBlock_main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 4rem;
 }
 
 .tourText_block {
-    font-weight: 700;
-    font-size: 2.4rem;
-    margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
 }
 
 .tourText_bigger {
-    font-size: 3.9rem;
+  font-size: 3.9rem;
 }
 
 .tourText_big {
-    letter-spacing: 8px;
+  letter-spacing: 8px;
 }
 
 .tourText_small {
-    margin: 4rem 0 2rem;
-    font-weight: 700;
-    font-size: 2rem;
+  margin: 4rem 0 2rem;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 .tourBlock_img {
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
 }
 
 .tourFork_block {
-    display: flex;
-    height: 40vmax;
-    width: 100%;
-    margin: 0 auto;
+  display: flex;
+  height: 40vmax;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .tourFork_blockParent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .tourFor_img > img {
-    width: 14rem;
-    cursor: pointer;
-    transition: 0.4s;
+  width: 11rem;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .tourFor_img:hover {
-    z-index: 100;
+  z-index: 100;
 }
 
 .tourFor_img:hover > .imghovBlock {
-    height: 100%;
-    opacity: 1;
+  height: 100%;
+  opacity: 1;
 }
 
 .imghovBlock {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    height: 0;
-    opacity: 0;
-    bottom: 0;
-    transition: 0.4s;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  bottom: 0;
+  transition: 0.4s;
 }
 
 .tourFor_img:hover > .imghovBlock > * {
-    display: block;
+  display: block;
 }
 
 .imghovBlock > * {
-    display: none;
+  display: none;
 }
 
 .imghovTitle {
-    font-weight: 600;
-    font-size: medium;
-    position: absolute;
-    top: 3rem;
+  font-weight: 600;
+  font-size: medium;
+  position: absolute;
+  top: 3rem;
 }
 
 .imghovInfo {
-    position: relative;
+  position: relative;
 }
 
 .imghovBtn {
-    position: absolute;
-    bottom: -3rem;
-    width: 100%;
-    background-color: #28209f;
-    padding: 0.6rem 0;
-    border-radius: 20px;
+  position: absolute;
+  bottom: -3rem;
+  width: 100%;
+  background-color: #28209f;
+  padding: 0.6rem 0;
+  border-radius: 20px;
 }
 
 .imghovBlock10 {
-    background: #0e55a790;
+  background: #0e55a790;
 }
 
 .imghovTextBold {
-    font-weight: 700;
-    font-size: 1.4rem;
+  font-weight: 700;
+  font-size: 1.4rem;
 }
 
 .imghovInfo > div {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .imghovBlock > p {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 .imghovBlock1 {
-    background: hsla(212, 84%, 35%, 0.9);
+  background: hsla(212, 84%, 35%, 0.9);
 }
 
 .imghovBlock2 {
-    background: hsla(17, 73%, 46%, 0.9);
+  background: hsla(17, 73%, 46%, 0.9);
 }
 
 .imghovBlock3 {
-    background: hsla(32, 84%, 54%, 0.9);
+  background: hsla(32, 84%, 54%, 0.9);
 }
 
 .imghovBlock4 {
-    background: hsla(199, 94%, 30%, 0.9);
+  background: hsla(199, 94%, 30%, 0.9);
 }
 
 .imghovBlock5 {
-    background: hsla(174, 97%, 25%, 0.9);
+  background: hsla(174, 97%, 25%, 0.9);
 }
 
 .imghovBlock6 {
-    background: hsla(173, 50%, 46%, 0.9);
+  background: hsla(173, 50%, 46%, 0.9);
 }
 
 .imghovBlock7 {
-    background: hsla(230, 61%, 41%, 0.9);
+  background: hsla(230, 61%, 41%, 0.9);
 }
 
 .tourFor_img {
-    transition: 0.4s;
-    display: flex;
-    flex-direction: column;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
 }
 
 .tourForkimg0 {
-    position: absolute;
-    z-index: 4;
-    left: 77%;
+  position: absolute;
+  z-index: 4;
+  left: 80%;
 }
 
 .tourForkimg1 {
-    position: absolute;
-    z-index: 10;
-    left: 5%;
+  position: absolute;
+  z-index: 10;
+  left: 8%;
 }
 
 .tourForkimg2 {
-    position: absolute;
-    left: 17%;
-    z-index: 9;
+  position: absolute;
+  left: 20%;
+  z-index: 9;
 }
 
 .tourForkimg3 {
-    position: absolute;
-    left: 41%;
-    z-index: 7;
+  position: absolute;
+  left: 44%;
+  z-index: 7;
 }
 
 .tourForkimg4 {
-    position: absolute;
-    left: 29%;
-    z-index: 8;
+  position: absolute;
+  left: 32%;
+  z-index: 8;
 }
 
 .tourForkimg5 {
-    position: absolute;
-    left: 53%;
-    z-index: 6;
+  position: absolute;
+  left: 56%;
+  z-index: 6;
 }
 
 .tourForkimg6 {
-    position: absolute;
-    left: 65%;
-    z-index: 5;
+  position: absolute;
+  left: 68%;
+  z-index: 5;
 }
 
 .anim {
-    position: absolute;
-    top: auto;
-    width: 10rem !important;
-    right: -3rem;
+  position: absolute;
+  top: auto;
+  width: 10rem !important;
+  right: -3rem;
 }
 
 @media screen and (max-width: 1160px) {
-    .tourFork_block {
-        height: 40rem;
-    }
+  .tourFork_block {
+    height: 40rem;
+  }
 }
 
 @media screen and (max-width: 1100px) {
-    .tourBlock_img {
-        width: 70%;
-    }
+  .tourBlock_img {
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    .tourFork_block {
-        display: none;
-    }
+  .tourFork_block {
+    display: none;
+  }
 
-    .swiper-wrapper {
-        padding: 0 0 35px 0;
-    }
+  .swiper-wrapper {
+    padding: 0 0 35px 0;
+  }
 
-    .swiper-pagination {
-        bottom: 0 !important;
-    }
+  .swiper-pagination {
+    bottom: 0 !important;
+  }
 
-    .swiper-pagination-bullet-active {
-        background-color: #fff !important;
-    }
+  .swiper-pagination-bullet-active {
+    background-color: #fff !important;
+  }
 
-    .swiper-pagination-bullet {
-        background-color: #ccc !important;
-        width: 15px !important;
-        height: 15px !important;
-    }
+  .swiper-pagination-bullet {
+    background-color: #ccc !important;
+    width: 15px !important;
+    height: 15px !important;
+  }
 
-    .tourSwiper {
-        display: block;
-        margin-bottom: 4rem;
-    }
+  .tourSwiper {
+    display: block;
+    margin-bottom: 4rem;
+  }
 
-    .tourForkimg01,
-    .tourForkimg11,
-    .tourForkimg21,
-    .tourForkimg31,
-    .tourForkimg41,
-    .tourForkimg51,
-    .tourForkimg61 {
-        margin: 0 auto;
-        width: 100% !important;
-    }
+  .tourForkimg01,
+  .tourForkimg11,
+  .tourForkimg21,
+  .tourForkimg31,
+  .tourForkimg41,
+  .tourForkimg51,
+  .tourForkimg61 {
+    margin: 0 auto;
+    width: 100% !important;
+  }
 
-    .tourForkimg0 {
-        position: relative;
-        left: 0;
-        z-index: 11;
-    }
+  .tourForkimg0 {
+    position: relative;
+    left: 0;
+    z-index: 11;
+  }
 
-    .tourForkimg1 {
-        position: relative;
-        left: 0;
-        z-index: 10;
-    }
+  .tourForkimg1 {
+    position: relative;
+    left: 0;
+    z-index: 10;
+  }
 
-    .tourForkimg2 {
-        position: relative;
-        left: 0;
-        z-index: 9;
-    }
+  .tourForkimg2 {
+    position: relative;
+    left: 0;
+    z-index: 9;
+  }
 
-    .tourForkimg3 {
-        position: relative;
-        left: 0;
-        z-index: 8;
-    }
+  .tourForkimg3 {
+    position: relative;
+    left: 0;
+    z-index: 8;
+  }
 
-    .tourForkimg4 {
-        position: relative;
-        left: 0;
-        z-index: 7;
-    }
+  .tourForkimg4 {
+    position: relative;
+    left: 0;
+    z-index: 7;
+  }
 
-    .tourForkimg5 {
-        position: relative;
-        left: 0;
-        z-index: 6;
-    }
+  .tourForkimg5 {
+    position: relative;
+    left: 0;
+    z-index: 6;
+  }
 
-    .tourForkimg6 {
-        position: relative;
-        left: 0;
-        z-index: 5;
-    }
+  .tourForkimg6 {
+    position: relative;
+    left: 0;
+    z-index: 5;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .tourFork_blockParent {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        width: 90%;
-    }
+  .tourFork_blockParent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 90%;
+  }
 
-    .tourForkimg01,
-    .tourForkimg11,
-    .tourForkimg21,
-    .tourForkimg31,
-    .tourForkimg41,
-    .tourForkimg51,
-    .tourForkimg61 {
-        margin: 0 auto;
-        width: 100% !important;
-    }
+  .tourForkimg01,
+  .tourForkimg11,
+  .tourForkimg21,
+  .tourForkimg31,
+  .tourForkimg41,
+  .tourForkimg51,
+  .tourForkimg61 {
+    margin: 0 auto;
+    width: 100% !important;
+  }
 
-    .tourFork_block > img {
-        position: relative;
-        width: 100%;
-    }
+  .tourFork_block > img {
+    position: relative;
+    width: 100%;
+  }
 
-    .tourFork_block > img:hover {
-        z-index: 100;
-        transform: none;
-    }
+  .tourFork_block > img:hover {
+    z-index: 100;
+    transform: none;
+  }
 
-    .tourForkimg1 {
-        left: 0;
-        z-index: 10;
-    }
+  .tourForkimg1 {
+    left: 0;
+    z-index: 10;
+  }
 
-    .tourForkimg2 {
-        left: 0;
-        z-index: 9;
-    }
+  .tourForkimg2 {
+    left: 0;
+    z-index: 9;
+  }
 
-    .tourForkimg3 {
-        left: 0;
-        z-index: 8;
-    }
+  .tourForkimg3 {
+    left: 0;
+    z-index: 8;
+  }
 
-    .tourForkimg4 {
-        left: 0;
-        z-index: 7;
-    }
+  .tourForkimg4 {
+    left: 0;
+    z-index: 7;
+  }
 
-    .tourForkimg5 {
-        left: 0;
-        z-index: 6;
-    }
+  .tourForkimg5 {
+    left: 0;
+    z-index: 6;
+  }
 
-    .tourForkimg6 {
-        left: 0;
-        z-index: 5;
-    }
+  .tourForkimg6 {
+    left: 0;
+    z-index: 5;
+  }
 }
 
 @media screen and (max-width: 570px) {
-    .tourForkimg01,
-    .tourForkimg11,
-    .tourForkimg21,
-    .tourForkimg31,
-    .tourForkimg41,
-    .tourForkimg51,
-    .tourForkimg61 {
-        margin: 0 auto;
-        width: 100% !important;
-    }
+  .tourForkimg01,
+  .tourForkimg11,
+  .tourForkimg21,
+  .tourForkimg31,
+  .tourForkimg41,
+  .tourForkimg51,
+  .tourForkimg61 {
+    margin: 0 auto;
+    width: 100% !important;
+  }
 
-    .imghovBlock > p {
-        margin-top: -28px;
-    }
+  .imghovBlock > p {
+    margin-top: -28px;
+  }
 
-    .swiper-pagination-bullet {
-        background-color: #ccc !important;
-        width: 8px !important;
-        height: 8px !important;
-    }
+  .swiper-pagination-bullet {
+    background-color: #ccc !important;
+    width: 8px !important;
+    height: 8px !important;
+  }
 
-    .swiper-wrapper {
-        padding: 0 0 25px 0;
-    }
+  .swiper-wrapper {
+    padding: 0 0 25px 0;
+  }
 }
 
 @media screen and (max-width: 425px) {
-    .tourText_block {
-        font-size: 1.5rem;
-    }
+  .tourText_block {
+    font-size: 1.5rem;
+  }
 
-    .tourText_bigger {
-        font-size: 2rem;
-    }
+  .tourText_bigger {
+    font-size: 2rem;
+  }
 
-    .tourText_big {
-        letter-spacing: 8px;
-    }
+  .tourText_big {
+    letter-spacing: 8px;
+  }
 
-    .tourText_small {
-        font-size: 1.3rem;
-    }
+  .tourText_small {
+    font-size: 1.3rem;
+  }
 
-    .bg5 {
-        padding: 0;
-    }
+  .bg5 {
+    padding: 0;
+  }
 }
