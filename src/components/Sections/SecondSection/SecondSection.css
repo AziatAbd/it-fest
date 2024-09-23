@@ -9,7 +9,7 @@
 }
 .secondBlock_el {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
 }
 .secondBlock_title {
   font-weight: 400;

@@ -33,91 +33,66 @@ import { Autoplay } from "swiper/modules";
 const sliderData = [
   {
     img: newBugu,
-    id: "e1",
   },
   {
     img: kite,
-    id: "e2",
   },
   {
     img: optimaLogo,
-    id: "e21",
   },
   {
     img: peaksoftLogo,
-    id: "e15",
   },
   {
     img: green,
-    id: "e3",
   },
   {
     img: muit,
-    id: "e4",
   },
   {
     img: fashionStudio,
-    id: "e5",
   },
   {
     img: foel,
-    id: "e6",
   },
   {
     img: irsan,
-    id: "e7",
   },
   {
     img: hoster,
-    id: "e8",
   },
   {
     img: inLab,
-    id: "e9",
   },
   {
     img: vilar,
-    id: "e10",
   },
   {
     img: gos,
-    id: "e11",
   },
   {
     img: borsan,
-    id: "e12",
   },
   {
     img: remax,
-    id: "e13",
   },
   {
     img: neko,
-    id: "e14",
   },
   {
     img: megaLogo,
-    id: "e16",
-  },
-  {
-    img: optimaLogo,
-    id: "e21",
   },
   {
     img: mer,
-    id: "e17",
   },
   {
     img: kia,
-    id: "e18",
   },
   {
     img: jkm,
-    id: "e19",
   },
   {
     img: civrokom,
-    id: "e20",
   },
 ];
 
@@ -215,13 +190,13 @@ const MainSection = () => {
             }}
             className="parnterSwiper"
           >
-            {sliderData.map((item) => (
-              <SwiperSlide key={item.id}>
+            {sliderData.map((item, i) => (
+              <SwiperSlide key={i}>
                 <img
                   src={item.img}
                   loading="lazy"
                   alt="error"
-                  className="swiperImgs parnterSwiper  "
+                  className="swiperImgs partSlide  "
                 />
               </SwiperSlide>
             ))}

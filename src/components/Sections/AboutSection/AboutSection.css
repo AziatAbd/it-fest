@@ -27,7 +27,7 @@ button {
 .expoAbout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 0 auto;
+  margin: 0 auto 100px;
   width: 90%;
   font-family: "Montserrat", sans-serif;
 }
@@ -106,7 +106,6 @@ button {
   content: "";
   position: absolute;
   top: 18px;
-  left: 0;
   width: 20px;
   height: 3px;
   border-radius: 20px;
@@ -114,11 +113,11 @@ button {
   transition: all 0.3s;
 }
 .expoAboutButton::after {
-  left: 50%;
+  left: 60%;
   transform: rotate(45deg);
 }
 .expoAboutButton::before {
-  left: 54%;
+  left: 64%;
   transform: rotate(-45deg);
 }
 .expoAboutButtonActive {

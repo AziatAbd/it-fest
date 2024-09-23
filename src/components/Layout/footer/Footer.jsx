@@ -21,7 +21,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href="https://www.instagram.com/cyber_kyrgyzstan?igsh=YXVkZ2x3cnJ6Mmxt"
+                href="https://www.instagram.com/itfest.kg?igsh=enBpcmx3MHpzdnZk"
                 target="_blank"
               >
                 <img

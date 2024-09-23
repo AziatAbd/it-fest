@@ -159,6 +159,11 @@ a {
   .navDrawer {
     display: block;
   }
+
+  .navBlock_logo {
+    height: 100px;
+    width: 5rem;
+  }
 }
 .navDropDown_logo {
   width: 60%;
