@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="footerInfo">
             <img loading="lazy" src={logo} alt="" className="footerLogo" />
             <div className="footerSocial_Block">
-              <a href="https://wa.me/996888429075" target="_blank">
+              <a href="https://wa.me/996990808637" target="_blank">
                 <img
                   loading="lazy"
                   src={what}
