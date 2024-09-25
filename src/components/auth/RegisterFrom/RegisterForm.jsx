@@ -10,9 +10,6 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import not404 from "../../../assets/not404.svg";
 
-import Alert from "@mui/material/Alert";
-import CheckIcon from "@mui/icons-material/Check";
-
 const RegisterForm = () => {
   const navigate = useNavigate();
   const [theme, setTheme] = useState("");
@@ -23,7 +20,7 @@ const RegisterForm = () => {
   const [checked, setChecked] = useState(false);
   const [inpBtnSt, setInpBtnSt] = useState(false);
 
-  const { role, register, regSt, errorr } = useAuth();
+  const { role, register, regSt } = useAuth();
 
   const [Surname, setSurname] = useState("");
   const [Name, setName] = useState("");
@@ -45,9 +42,9 @@ const RegisterForm = () => {
   const [compProd, setcompprod] = useState("");
   const [hackathonTeamName, setHackathonTeamName] = useState("");
   const [teammates, setTeammates] = useState([
-    { name: "", email: "", dateOfBirth: "", phone: "", position: "" },
-    { name: "", email: "", dateOfBirth: "", phone: "", position: "" },
-    { name: "", email: "", dateOfBirth: "", phone: "", position: "" },
+    { fullName: "", email: "", dateOfBirth: "", phoneNumber: "", position: "" },
+    { fullName: "", email: "", dateOfBirth: "", phoneNumber: "", position: "" },
+    { fullName: "", email: "", dateOfBirth: "", phoneNumber: "", position: "" },
   ]);
 
   function sendData(fork) {
@@ -70,14 +67,14 @@ const RegisterForm = () => {
       }
 
       const formdata = {
-        Surname: Surname,
-        Name: Name,
-        FatherName: FatherName,
-        Email: Email,
-        Country: Country,
-        City: City,
-        DateOfBirth: DateOfBirth,
-        PhoneNumber: PhoneNumber,
+        lastName: Surname,
+        firstName: Name,
+        surname: FatherName,
+        email: Email,
+        country: Country,
+        city: City,
+        dateOfBirth: DateOfBirth,
+        phoneNumber: PhoneNumber,
         speech_theme: speech_theme,
       };
       register(formdata, fork);
@@ -101,14 +98,14 @@ const RegisterForm = () => {
       }
 
       const formdata = {
-        Surname: Surname,
-        Name: Name,
-        FatherName: FatherName,
-        Email: Email,
-        Country: Country,
-        City: City,
-        DateOfBirth: DateOfBirth,
-        PhoneNumber: PhoneNumber,
+        lastName: Surname,
+        firstName: Name,
+        surname: FatherName,
+        email: Email,
+        country: Country,
+        city: City,
+        dateOfBirth: DateOfBirth,
+        phoneNumber: PhoneNumber,
         speech_theme: speech_theme,
       };
       register(formdata, fork);
@@ -132,16 +129,16 @@ const RegisterForm = () => {
         setInpBtnSt(!inpBtnSt);
       }
       const formdata = {
-        Surname: Surname,
-        Name: Name,
-        FatherName: FatherName,
-        Email: Email,
-        Country: Country,
-        City: City,
-        DateOfBirth: DateOfBirth,
-        PhoneNumber: PhoneNumber,
-        Game: work,
-        ParticipateFormat: format,
+        lastName: Surname,
+        firstName: Name,
+        surname: FatherName,
+        email: Email,
+        country: Country,
+        city: City,
+        dateOfBirth: DateOfBirth,
+        phoneNumber: PhoneNumber,
+        game: work,
+        participateFormat: format,
       };
       emailVal();
       if (message.length < 1) {
@@ -169,14 +166,14 @@ const RegisterForm = () => {
         setInpBtnSt(!inpBtnSt);
       }
       const formdata = {
-        Surname: Surname,
-        Name: Name,
-        FatherName: FatherName,
-        Email: Email,
-        Country: Country,
-        City: City,
-        DateOfBirth: DateOfBirth,
-        PhoneNumber: PhoneNumber,
+        lastName: Surname,
+        firstName: Name,
+        surname: FatherName,
+        email: Email,
+        country: Country,
+        city: City,
+        dateOfBirth: DateOfBirth,
+        phoneNumber: PhoneNumber,
         course: work,
       };
       emailVal();
@@ -205,14 +202,14 @@ const RegisterForm = () => {
         setInpBtnSt(!inpBtnSt);
       }
       const formdata = {
-        Surname: Surname,
-        Name: Name,
-        FatherName: FatherName,
-        Email: Email,
-        Country: Country,
-        City: City,
-        DateOfBirth: DateOfBirth,
-        PhoneNumber: PhoneNumber,
+        lastName: Surname,
+        firstName: Name,
+        surname: FatherName,
+        email: Email,
+        country: Country,
+        city: City,
+        dateOfBirth: DateOfBirth,
+        phoneNumber: PhoneNumber,
         course: work,
       };
       emailVal();
@@ -244,21 +241,21 @@ const RegisterForm = () => {
         setInpBtnSt(!inpBtnSt);
       }
       const formdata = {
-        Surname: Surname,
-        Name: Name,
-        FatherName: FatherName,
-        Email: Email,
-        Country: Country,
-        City: City,
-        DateOfBirth: DateOfBirth,
-        PhoneNumber: PhoneNumber,
+        lastName: Surname,
+        firstName: Name,
+        surname: FatherName,
+        email: Email,
+        country: Country,
+        city: City,
+        dateOfBirth: DateOfBirth,
+        phoneNumber: PhoneNumber,
       };
       emailVal();
       if (message.length < 1) {
         register(formdata, fork);
       }
     }
-    if (fork == "/foodcourt-participant") {
+    if (fork == "/foodCort") {
       if (
         !Name ||
         !jbtitle ||
@@ -274,13 +271,14 @@ const RegisterForm = () => {
         setInpBtnSt(!inpBtnSt);
       }
       const formdata = {
-        Brand_name: Name,
-        Job_Title: jbtitle,
-        Company_Activity: activity,
-        Email: Email,
-        Country: Country,
-        Phone_number: PhoneNumber,
-        Company_Product: compProd,
+        brandName: Name,
+        fullName: FatherName,
+        jobTitle: jbtitle,
+        companyActivity: activity,
+        email: Email,
+        country: Country,
+        phoneNumber: PhoneNumber,
+        companyProduct: compProd,
       };
       emailVal();
       if (message.length < 1) {
@@ -290,7 +288,7 @@ const RegisterForm = () => {
         }
       }
     }
-    if (fork == "/expo-participant") {
+    if (fork == "/expo") {
       if (
         !Name ||
         !jbtitle ||
@@ -308,14 +306,15 @@ const RegisterForm = () => {
         setInpBtnSt(!inpBtnSt);
       }
       const formdata = {
-        Brand_name: Name,
-        Job_Title: jbtitle,
-        Company_Activity: activity,
-        Email: Email,
-        Country: Country,
-        Phone_number: PhoneNumber,
-        Company_Product: compProd,
-        Theme: theme2,
+        brandName: Name,
+        jobTitle: jbtitle,
+        companyActivity: activity,
+        email: Email,
+        country: Country,
+        phoneNumber: PhoneNumber,
+        companyProduct: compProd,
+        thematicExpo: theme2,
+        fullName: FatherName,
       };
       emailVal();
       if (message.length < 1) {
@@ -335,26 +334,26 @@ const RegisterForm = () => {
       }
 
       const formdata = {
-        Name: Name,
-        City: City,
-        Age: Age,
-        PhoneNumber: PhoneNumber,
-        Theme: VisitorTheme,
+        name: Name,
+        city: City,
+        dateOfBirth: Age,
+        phoneNumber: PhoneNumber,
+        typeOfActivity: VisitorTheme,
       };
       register(formdata, fork);
     }
-    if (fork == "/tournament-participant") {
+    if (fork == "/tournament") {
       const formdata = {
-        Name: Name,
-        Surname: Surname,
-        FatherName: FatherName,
-        Email: Email,
-        Country: Country,
-        City: City,
-        PhoneNumber: PhoneNumber,
-        DateOfBirth: DateOfBirth,
-        course: result,
-        theme: theme,
+        firstName: Name,
+        lastName: Surname,
+        surname: FatherName,
+        email: Email,
+        country: Country,
+        city: City,
+        phoneNumber: PhoneNumber,
+        dateOfBirth: DateOfBirth,
+        // course: result,
+        thematicTournament: theme,
       };
       console.log(formdata);
       if (
@@ -377,13 +376,27 @@ const RegisterForm = () => {
       emailVal();
       if (message.length < 1) {
         // console.log(reg_logo);
-        register(formdata, fork);
+        if (theme === "CYBER_SPORT") {
+          const { ...rest } = formdata;
+
+          register(
+            { ...rest, formatParticipation: format, direction: work },
+            `${fork}/cyberSport`
+          );
+        } else if (theme === "DESIGN_3D") {
+          const { ...rest } = formdata;
+
+          register({ ...rest, designDirection: work }, `${fork}/design`);
+        } else {
+          register(formdata, fork);
+        }
+
         if (checked && inpBtnSt) {
           navigate("/");
         }
       }
     }
-    if (fork == "/partners") {
+    if (fork == "/partner") {
       if (
         !partnersCompanyName ||
         !Name ||
@@ -398,16 +411,16 @@ const RegisterForm = () => {
       }
 
       const formdata = {
-        PartnersCompanyName: partnersCompanyName,
-        Name: Name,
-        PhoneNumber: PhoneNumber,
-        jbtitle: jbtitle,
-        theme2: theme2,
+        companyName: partnersCompanyName,
+        fullName: Name,
+        phoneNumber: PhoneNumber,
+        jobTitle: jbtitle,
+        thematicPartner: theme2,
       };
       console.log(formdata);
       register(formdata, fork);
     }
-    if (fork == "/hackathonTeam") {
+    if (fork == "/hackathon") {
       if (!hackathonTeamName || !Country || !City || !theme || !teammates) {
         alert("Заполните все поля!1");
         return;
@@ -416,11 +429,12 @@ const RegisterForm = () => {
       }
 
       const formdata = {
-        hackathonTeamName: hackathonTeamName,
-        Country: Country,
-        City: City,
-        Theme: theme,
-        hackathonTeammates: teammates,
+        teamName: hackathonTeamName,
+        country: Country,
+        city: City,
+        thematicTournament: theme,
+        hackathonDirection: work,
+        hackathonTeams: teammates,
       };
       console.log(formdata);
       register(formdata, fork);
@@ -429,7 +443,7 @@ const RegisterForm = () => {
 
   const handleThemeChange = (event) => {
     const value = event.target.value;
-    if (value === "hackathon") {
+    if (value === "HACKATHON") {
       setHackatonChoosen(true);
     } else {
       setHackatonChoosen(false);
@@ -504,7 +518,13 @@ const RegisterForm = () => {
     if (teammates.length < 5) {
       setTeammates((prevTeammates) => [
         ...prevTeammates,
-        { name: "", email: "", dateOfBirth: "", phone: "", position: "" },
+        {
+          fullName: "",
+          email: "",
+          dateOfBirth: "",
+          phoneNumber: "",
+          position: "",
+        },
       ]);
     } else {
       alert("Вы можете добавить не более 5 участников.");
@@ -568,17 +588,19 @@ const RegisterForm = () => {
                     value={theme}
                     className="formInputSelect hackathonInputWrapper"
                   >
-                    <MenuItem value={"cybersport"}>Киберспорт</MenuItem>
-                    <MenuItem value={"design"}>Дизайн и 3D</MenuItem>
-                    <MenuItem value={"hackathon"}>Хакатон</MenuItem>
-                    <MenuItem value={"mobilography"}>Мобилография</MenuItem>
-                    <MenuItem value={"robotix"}>Робототехника</MenuItem>
-                    <MenuItem value={"dronerace"}>Дрон демонстрация</MenuItem>
+                    <MenuItem value={"CYBER_SPORT"}>Киберспорт</MenuItem>
+                    <MenuItem value={"DESIGN_3D"}>Дизайн и 3D</MenuItem>
+                    <MenuItem value={"HACKATHON"}>Хакатон</MenuItem>
+                    <MenuItem value={"MOBILOGRAPHY"}>Мобилография</MenuItem>
+                    <MenuItem value={"ROBOTICS"}>Робототехника</MenuItem>
+                    <MenuItem value={"DRONE_DEMONSTRATION"}>
+                      Дрон демонстрация
+                    </MenuItem>
                   </Select>
                 </FormControl>
               </div>
             </div>
-            {theme === "hackathon" && (
+            {theme === "HACKATHON" && (
               <div className="formBlock">
                 <div>
                   <p className="Выберите свое направление">
@@ -592,18 +614,18 @@ const RegisterForm = () => {
                       value={work}
                       className="formInputSelect"
                     >
-                      <MenuItem value={"Backend"}>Backend</MenuItem>
-                      <MenuItem value={"Frontend"}>Frontend</MenuItem>
-                      <MenuItem value={"Fullstack"}>Fullstack</MenuItem>
-                      <MenuItem value={"Android-IOS"}>Android-IOS</MenuItem>
+                      <MenuItem value={"BACKEND"}>Backend</MenuItem>
+                      <MenuItem value={"FRONTEND"}>Frontend</MenuItem>
+                      <MenuItem value={"FULLSTACK"}>Fullstack</MenuItem>
+                      <MenuItem value={"ANDROID_IOS"}>Android-IOS</MenuItem>
                     </Select>
                   </FormControl>
                 </div>
               </div>
             )}
-            <div className="hackathonResult">
+            {/* <div className="hackathonResult">
               <p>Результат: {result}</p>
-            </div>
+            </div> */}
           </>
           {teammates.map((mate, idx) => (
             <>
@@ -617,7 +639,7 @@ const RegisterForm = () => {
                     <input
                       className="formInput"
                       type="text"
-                      id={`name_${idx}`}
+                      id={`fullName_${idx}`}
                       onInput={(e) => {
                         const [field, index] = e.target.id.split("_");
                         setTeammates((prev) => {
@@ -693,8 +715,8 @@ const RegisterForm = () => {
                       placeholder="996 999777666"
                       className="formInput"
                       onChange={(e) => phoneHandle(e)}
-                      id={`phone_${idx}`}
-                      value={mate.phone || ""}
+                      id={`phoneNumber_${idx}`}
+                      value={mate.phoneNumber || ""}
                       onInput={(e) => {
                         const [field, index] = e.target.id.split("_");
                         setTeammates((prev) => {
@@ -770,7 +792,7 @@ const RegisterForm = () => {
               <button
                 className={`regBbtn regBtn${checked}`}
                 disabled={!checked}
-                onClick={() => sendData("/hackathonTeam")}
+                onClick={() => sendData("/hackathon")}
               >
                 Зарегистрироваться
               </button>
@@ -871,12 +893,12 @@ const RegisterForm = () => {
                         value={theme}
                         className="formInputSelect"
                       >
-                        <MenuItem value={"cybersport"}>Киберспорт</MenuItem>
-                        <MenuItem value={"design"}>Дизайн и 3D</MenuItem>
-                        <MenuItem value={"hackathon"}>Хакатон</MenuItem>
-                        <MenuItem value={"mobilography"}>Мобилография</MenuItem>
-                        <MenuItem value={"robotix"}>Робототехника</MenuItem>
-                        <MenuItem value={"dronerace"}>
+                        <MenuItem value={"CYBER_SPORT"}>Киберспорт</MenuItem>
+                        <MenuItem value={"DESIGN_3D"}>Дизайн и 3D</MenuItem>
+                        <MenuItem value={"HACKATHON"}>Хакатон</MenuItem>
+                        <MenuItem value={"MOBILOGRAPHY"}>Мобилография</MenuItem>
+                        <MenuItem value={"ROBOTICS"}>Робототехника</MenuItem>
+                        <MenuItem value={"DRONE_DEMONSTRATION"}>
                           Дрон демонстрация
                         </MenuItem>
                       </Select>
@@ -884,7 +906,7 @@ const RegisterForm = () => {
                   </div>
                 </div>
 
-                {theme === "cybersport" && (
+                {theme === "CYBER_SPORT" && (
                   <>
                     <div className="formBlock">
                       <div>
@@ -899,9 +921,11 @@ const RegisterForm = () => {
                             value={work}
                             className="formInputSelect"
                           >
-                            <MenuItem value={"Counter-Strike 2"}>
+                            <MenuItem value={"COUNTER_STRIKE_2"}>
                               Counter-Strike 2
                             </MenuItem>
+                            <MenuItem value={"PUBG"}>PUBG</MenuItem>
+                            <MenuItem value={"DOTA_2"}>Dota 2</MenuItem>
                             {/* Добавьте другие направления, если необходимо */}
                           </Select>
                         </FormControl>
@@ -919,8 +943,8 @@ const RegisterForm = () => {
                             value={format}
                             className="formInputSelect"
                           >
-                            <MenuItem value={"Одиночное"}>Одиночное</MenuItem>
-                            <MenuItem value={"Командное"}>Командное</MenuItem>
+                            <MenuItem value={"ALONE"}>Одиночное</MenuItem>
+                            <MenuItem value={"TEAM"}>Командное</MenuItem>
                           </Select>
                         </FormControl>
                       </div>
@@ -928,7 +952,7 @@ const RegisterForm = () => {
                   </>
                 )}
 
-                {theme === "design" && (
+                {theme === "DESIGN_3D" && (
                   <div className="formBlock">
                     <div>
                       <p className="formInp_label">Выберите свое направление</p>
@@ -940,17 +964,15 @@ const RegisterForm = () => {
                           value={work}
                           className="formInputSelect"
                         >
-                          <MenuItem value={"3D дизайн"}>3D дизайн</MenuItem>
-                          <MenuItem value={"Motion дизайн"}>
+                          <MenuItem value={"DESIGN_3D"}>3D дизайн</MenuItem>
+                          <MenuItem value={"MOTION_DESIGN"}>
                             Motion дизайн
                           </MenuItem>
-                          <MenuItem value={"UX/UI"}>UX/UI</MenuItem>
-                          <MenuItem value={"Графический дизайнер"}>
+                          <MenuItem value={"UX_UI"}>UX/UI</MenuItem>
+                          <MenuItem value={"GRAP_DESIGN"}>
                             Графический дизайнер
                           </MenuItem>
-                          <MenuItem
-                            value={"3D визуализация(интерьер и экстерьер)"}
-                          >
+                          <MenuItem value={"VISUAL_3D"}>
                             3D визуализация (интерьер и экстерьер)
                           </MenuItem>
                         </Select>
@@ -959,7 +981,7 @@ const RegisterForm = () => {
                   </div>
                 )}
 
-                {theme === "hackathon" && (
+                {theme === "HACKATHON" && (
                   <div className="formBlock">
                     <div>
                       <p className="formInp_label">Выберите свое направление</p>
@@ -980,9 +1002,9 @@ const RegisterForm = () => {
                     </div>
                   </div>
                 )}
-                <div>
+                {/* <div>
                   <p>Результат: {result}</p>
-                </div>
+                </div> */}
               </>
             ) : (
               <></>
@@ -996,7 +1018,7 @@ const RegisterForm = () => {
             <button
               className={`regBbtn regBtn${checked}`}
               // onClick={() => sendData(`register_user/${theme}/`)}
-              onClick={() => sendData("/tournament-participant")}
+              onClick={() => sendData("/tournament")}
               disabled={!checked}
             >
               Зарегистрироваться
@@ -1048,21 +1070,6 @@ const RegisterForm = () => {
           </Link>
         </Breadcrumbs>
         <div className="regForm_block">
-          {regSt ? (
-            <div className="regFormSucces">
-              <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
-                Регистрация прошла успешно!
-              </Alert>
-            </div>
-          ) : errorr.length > 1 ? (
-            <div className="regFormSucces">
-              <Alert severity="error">
-                Упс, проблема! Попробуйте снова позже или перепроверьте данные!{" "}
-              </Alert>
-            </div>
-          ) : (
-            <></>
-          )}
           <h2 className="regisTitle">Регистрация</h2>
           {role == "EXPO" ? (
             <>
@@ -1178,8 +1185,8 @@ const RegisterForm = () => {
                         value={theme2}
                         className="formInputSelect"
                       >
-                        <MenuItem value={"Услуги"}>Услуги</MenuItem>
-                        <MenuItem value={"Товары"}>Товары</MenuItem>
+                        <MenuItem value={"SERVICE"}>Услуги</MenuItem>
+                        <MenuItem value={"PRODUCT"}>Товары</MenuItem>
                       </Select>
                     </FormControl>
                   </div>
@@ -1206,7 +1213,7 @@ const RegisterForm = () => {
                 <button
                   className={`regBbtn regBtn${checked}`}
                   disabled={!checked}
-                  onClick={() => sendData("/expo-participant")}
+                  onClick={() => sendData("/expo")}
                 >
                   Зарегистрироваться
                 </button>
@@ -1446,7 +1453,7 @@ const RegisterForm = () => {
                 <button
                   className={`regBbtn regBtn${checked}`}
                   disabled={!checked}
-                  onClick={() => sendData("/foodcourt-participant")}
+                  onClick={() => sendData("/foodCort")}
                 >
                   Зарегистрироваться
                 </button>
@@ -1689,37 +1696,33 @@ const RegisterForm = () => {
                       >
                         <MenuItem
                           value={
-                            "Баннерная и наружная реклама, реклама на LED экранах"
+                            "BANNER_AND_OUTDOOR_ADVERTISING_ON_LED_SCREENS"
                           }
                         >
                           Баннерная и наружная реклама, реклама на LED экранах
                         </MenuItem>
                         <MenuItem
                           value={
-                            "Спонсорство мероприятий, активностей и конкурсовслуги"
+                            "SPONSORSHIP_OF_EVENTS_ACTIVITIES_AND_COMPETITIONS_SERVICES"
                           }
                         >
                           Спонсорство мероприятий, активностей и конкурсовслуги
                         </MenuItem>
-                        <MenuItem value={"Мерчандайзинг и печатная продукция"}>
+                        <MenuItem value={"MERCHANDISING_AND_PRINTED_MATERIALS"}>
                           Мерчандайзинг и печатная продукция
                         </MenuItem>
-                        <MenuItem value={"Брендирование зон и площадок"}>
+                        <MenuItem value={"BRANDING_OF_ZONES_AND_SITES"}>
                           Брендирование зон и площадок
                         </MenuItem>
-                        <MenuItem
-                          value={
-                            "Экспозиционные зоны и демонстрационные стенды"
-                          }
-                        >
+                        <MenuItem value={"EXHIBITION_ZONES_AND_DISPLAY_STANDS"}>
                           Экспозиционные зоны и демонстрационные стенды
                         </MenuItem>
                         <MenuItem
-                          value={"Спонсорство инфраструктуры и логистики"}
+                          value={"SPONSORSHIP_INFRASTRUCTURE_AND_LOGISTICS"}
                         >
                           Спонсорство инфраструктуры и логистики
                         </MenuItem>
-                        <MenuItem value={"Спикерское партнёрство"}>
+                        <MenuItem value={"SPEAKER_PARTNERSHIP"}>
                           Спикерское партнёрство
                         </MenuItem>
                       </Select>
@@ -1767,7 +1770,7 @@ const RegisterForm = () => {
                 <button
                   className={`regBbtn regBtn${checked}`}
                   disabled={!checked}
-                  onClick={() => sendData("/partners")}
+                  onClick={() => sendData("/partner")}
                 >
                   Зарегистрироваться
                 </button>

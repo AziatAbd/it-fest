@@ -1,19 +1,22 @@
 import React, { useContext, useState } from "react";
 import PropTypes from "prop-types"; // Импортируем PropTypes
+import { useNavigate } from "react-router-dom";
 
 export const authContext = React.createContext();
 export const useAuth = () => useContext(authContext);
 
-const API = "https://metalabs.kg:8089";
+const API = "http://ec2-3-127-247-177.eu-central-1.compute.amazonaws.com";
 
 const AuthContextProvider = ({ children }) => {
+  const navigate = useNavigate();
+
   const [role, setRole] = useState(null);
   const [errorr, setErrorr] = useState("");
   const [regSt, setRegSt] = useState(false);
 
   async function register(formData, fork) {
     try {
-      const response = await fetch(`${API}${fork}`, {
+      await fetch(`${API}/api${fork}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -21,14 +24,8 @@ const AuthContextProvider = ({ children }) => {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
-        console.log(formData);
-        setRegSt(true);
-      } else {
-        const errorData = await response.json();
-        console.log(errorData);
-        console.log(JSON.stringify(formData));
-      }
+      setRegSt(true);
+      navigate("/");
     } catch (err) {
       setErrorr(err);
       console.error("Error:", err);
