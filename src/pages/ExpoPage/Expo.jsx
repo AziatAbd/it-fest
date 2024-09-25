@@ -51,7 +51,7 @@ export const Expo = () => {
                 </p>
                 <a
                   className="expoBtn expoBtn1"
-                  href="https://wa.me/996888429075"
+                  href="https://wa.me/996990808637"
                   target="_blank"
                 >
                   Подробнее
@@ -79,7 +79,7 @@ export const Expo = () => {
                 </p>
                 <a
                   className="expoBtn expoBtn2"
-                  href="https://wa.me/996888429075"
+                  href="https://wa.me/996990808637"
                   target="_blank"
                 >
                   Подробнее
@@ -108,7 +108,7 @@ export const Expo = () => {
                 </p>
                 <a
                   className="expoBtn expoBtn2"
-                  href="https://wa.me/996888429075"
+                  href="https://wa.me/996990808637"
                   target="_blank"
                 >
                   Подробнее

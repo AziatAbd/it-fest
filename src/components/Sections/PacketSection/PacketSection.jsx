@@ -19,7 +19,7 @@ const PacketSection = () => {
           </p>
           <a
             className="packetBtn packBtn1"
-            href="https://wa.me/996990088589"
+            href="https://wa.me/996990808637"
             target="_blank"
           >
             Подробнее
