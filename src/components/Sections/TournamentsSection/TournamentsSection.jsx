@@ -20,6 +20,7 @@ import { useNavigate } from "react-router-dom";
 
 const TournamentsSection = () => {
   const navigate = useNavigate();
+
   return (
     <div className="bg5" id="participants">
       <div className="container">
@@ -155,16 +156,24 @@ const TournamentsSection = () => {
                 className="tourForkimg51"
               />
               <div className="imghovBlock imghovBlock6">
-                <p className="imghovTitle">Мобилография</p>
+                <a
+                  href="https://mobilography.kg"
+                  target="_blank"
+                  className="imghovTitle"
+                >
+                  Мобилография
+                </a>
                 <div className="imghovInfo">
-                  <div>
-                    <p>Участники: </p>
-                    <p className="imghovTextBold">100 человек.</p>
-                  </div>
-                  <div>
-                    <p>Призовой фонд:</p>
-                    <p className="imghovTextBold">300,000 сом</p>
-                  </div>
+                  <a href="https://mobilography.kg" target="_blank">
+                    <div>
+                      <p>Участники: </p>
+                      <p className="imghovTextBold">100 человек.</p>
+                    </div>
+                    <div>
+                      <p>Призовой фонд:</p>
+                      <p className="imghovTextBold">300,000 сом</p>
+                    </div>
+                  </a>
                   <p className="imghovBtn" onClick={() => navigate("/choice")}>
                     Регистрация
                   </p>
@@ -381,16 +390,24 @@ const TournamentsSection = () => {
                   className="tourForkimg51"
                 />
                 <div className="imghovBlock imghovBlock6">
-                  <p className="imghovTitle">Мобилография</p>
+                  <a
+                    href="https://mobilography.kg"
+                    target="_blank"
+                    className="imghovTitle"
+                  >
+                    Мобилография
+                  </a>
                   <div className="imghovInfo">
-                    <div>
-                      <p>Участники: </p>
-                      <p className="imghovTextBold">100 человек.</p>
-                    </div>
-                    <div>
-                      <p>Призовой фонд:</p>
-                      <p className="imghovTextBold">300,000 сом</p>
-                    </div>
+                    <a href="https://mobilography.kg" target="_blank">
+                      <div>
+                        <p>Участники: </p>
+                        <p className="imghovTextBold">100 человек.</p>
+                      </div>
+                      <div>
+                        <p>Призовой фонд:</p>
+                        <p className="imghovTextBold">300,000 сом</p>
+                      </div>
+                    </a>
                     <p
                       className="imghovBtn"
                       onClick={() => navigate("/choice")}
