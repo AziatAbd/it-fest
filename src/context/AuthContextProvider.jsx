@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export const authContext = React.createContext();
 export const useAuth = () => useContext(authContext);
 
-const API = "http://ec2-3-127-247-177.eu-central-1.compute.amazonaws.com";
+const API = "https://itfest.peaksoft.house";
 
 const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();

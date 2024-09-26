@@ -36,7 +36,6 @@ const RegisterForm = () => {
   const [message, setMessage] = useState("");
   const [jbtitle, setjbtitle] = useState("");
   const [activity, setactivity] = useState("");
-  const [result, setResult] = useState("");
   const [partnersCompanyName, setPartnersCompanyName] = useState("");
   const [isHackatonChoosen, setHackatonChoosen] = useState(false);
   const [compProd, setcompprod] = useState("");
@@ -449,26 +448,16 @@ const RegisterForm = () => {
       setHackatonChoosen(false);
     }
     setTheme(value);
-    updateResult(value, work, format);
   };
 
   const handleWorkChange = (event) => {
     const value = event.target.value;
     setWork(value);
-    updateResult(theme, value, format);
   };
 
   const handleFormatChange = (event) => {
     const value = event.target.value;
     setFormat(value);
-    updateResult(theme, work, value);
-  };
-
-  const updateResult = (theme, work, format) => {
-    let newResult = theme;
-    if (work) newResult += ` ${work}`;
-    if (format) newResult += ` ${format}`;
-    setResult(newResult);
   };
 
   function formatphone(value) {
