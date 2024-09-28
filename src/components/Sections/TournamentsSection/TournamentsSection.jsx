@@ -7,6 +7,7 @@ import tour4 from "../../../assets/tour/hakaton.png";
 import tour5 from "../../../assets/tour/mobilography.png";
 import tour6 from "../../../assets/tour/robotics.png";
 import anim2 from "../../../assets/animations/anim.gif";
+import anim3 from "../../../assets/animations/mobi-anim.gif";
 
 import "./TournamentsSection.css";
 
@@ -151,7 +152,7 @@ const TournamentsSection = () => {
             <div className="tourFor_img tourForkimg5">
               <img
                 loading="lazy"
-                src={tour5}
+                src={anim3}
                 alt="error"
                 className="tourForkimg51"
               />
