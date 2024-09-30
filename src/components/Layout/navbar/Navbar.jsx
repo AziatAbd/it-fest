@@ -1,20 +1,16 @@
 import React, { useState } from "react";
-import logo from "../../../assets/partnerslogo/mer.png";
-import irsenLogo from "../../../assets/partnerslogo/irsen.png";
-import peaksoftLogo from "../../../assets/partnerslogo/peaksoft.svg";
-
 import Button from "@mui/material/Button";
-// import Menu from "@mui/material/Menu";
-// import MenuItem from "@mui/material/MenuItem";
-// import AccountCircle from "@mui/icons-material/AccountCircle";
-// import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
+import { useNavigate } from "react-router-dom";
+
+import logo from "../../../assets/partnerslogo/mer.png";
 import menuicon from "../../../assets/menu.svg";
+import parkIcon from "../../../assets/sponsorslogo/htp.svg";
+import peaksoftLogo from "../../../assets/partnerslogo/peaksoft.svg";
 
 import "./Navbar.css";
-import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [arrowSt, setArrowSt] = useState(false);
@@ -39,7 +35,7 @@ const Navbar = () => {
           <div className="headerLogo" onClick={() => navigate("/")}>
             <img src={logo} alt="error" className="navBlock_logo bish" />
             <img src={peaksoftLogo} alt="error" className="navBlock_logo" />
-            <img src={irsenLogo} alt="error" className="navBlock_logo irsen" />
+            <img src={parkIcon} alt="error" className="navBlock_logo irsen" />
           </div>
           {/* desktop navbar */}
           <div className="navBlock_mini">
