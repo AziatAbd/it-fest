@@ -15,6 +15,11 @@ export const Hero = () => {
         asperiores dolores vitae hic ad quos quasi reprehenderit consequatur,
         iusto vero ea.
       </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, dolorem
+        nostrum? Vel saepe sint dolorum ab nobis, dolorem dolore nihil quasi
+        eum. Nisi alias unde assumenda a adipisci officia tempore!
+      </p>
     </>
   );
 };
