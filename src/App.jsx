@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="appBlock">
       <AuthContextProvider>
-        <MainRoutes />
+        <button></button>
       </AuthContextProvider>
     </div>
   );
