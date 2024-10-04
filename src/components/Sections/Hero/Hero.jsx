@@ -1,8 +1,4 @@
 import "./Hero.css";
 export const Hero = () => {
-  return (
-    <>
-    
-    </>
-  );
+  return <></>;
 };

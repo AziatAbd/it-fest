@@ -26,6 +26,7 @@ import neko from "../../../assets/partnerslogo/neko.svg";
 import peaksoftLogo from "../../../assets/partnerslogo/peaksoft.svg";
 import megaLogo from "../../../assets/partnerslogo/mega.svg";
 import optimaLogo from "../../../assets/partnerslogo/optimaBank.svg";
+import bellagio from "../../../assets/partnerslogo/Bellagio.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -36,6 +37,9 @@ const sliderData = [
   },
   {
     img: kite,
+  },
+  {
+    img: bellagio,
   },
   {
     img: optimaLogo,

@@ -175,9 +175,13 @@ const TournamentsSection = () => {
                       <p className="imghovTextBold">300,000 сом</p>
                     </div>
                   </a>
-                  <p className="imghovBtn" onClick={() => navigate("/choice")}>
+                  <a
+                    href="https://mobilography.kg"
+                    target="_blank"
+                    className="mobi"
+                  >
                     Регистрация
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>
